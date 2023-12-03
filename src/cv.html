@@ -18,8 +18,9 @@
                 <li><a href="cv.html" class="active">CV</a></li>
             </ul>
             <div class="language-switch">
-                <a href="/cv.html" class="active">EN</a> |
-                <a href="../jp/cv.html">JA</a>
+                <button id="en-btn">EN</button>
+                <span>|</span>
+                <button id="jp-btn">JP</button>
             </div>
         </nav>
     </header>
@@ -28,7 +29,12 @@
         <section class="cv-section">
             <iframe src="../src/CV.pdf" frameborder="0"></iframe>
             <p class="download-link">
+                <div id="en-content">
                 <a href="../src/CV.pdf" download="../src/CV.pdf">Download the CV</a>.
+                </div>
+                <div id="jp-content">
+                <a href="../src/CV.pdf" download="../src/CV.pdf">CVをダウンロード</a>
+                </div>
             </p>
         </section>
     </main>
@@ -36,5 +42,6 @@
     <footer>
         <p>© 2023 Yuto Motohashi. All Rights Reserved.</p>
     </footer>
+    <script src="../scripts.js"></script>
 </body>
 </html>

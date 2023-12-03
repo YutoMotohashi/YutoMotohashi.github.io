@@ -84,30 +84,41 @@ nav ul li a.active {
     border-bottom: 2px solid #007bff; /* Underline for active nav item */
 }
 
-.language-switch a {
-    padding: 0 10px;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.8rem; /* Smaller font size for language switch */
-    transition: color 0.3s;
-    position: relative; /* To position the active state underline */
+.language-switch {
+    display: inline-block; /* Positions the buttons inline with space for the underline */
+    font-size: 1em; /* Sets the font size for the language switch */
 }
 
-.language-switch a.active {
-    color: #007bff; /* Active color for language switch */
-    font-weight: bold; /* Make it bold to indicate active language */
+.language-switch button {
+    background: none; /* No background color */
+    border: none; /* No border */
+    font-size: inherit; /* Inherits font size from parent */
+    padding: 10px; /* Space around the text */
+    margin: 0 5px; /* Space between buttons and separator */
+    cursor: pointer; /* Changes cursor to pointer to signify a clickable item */
+    position: relative; /* Sets up positioning context for the underline */
+    outline: none; /* Removes the default focus outline */
+    color: #333; /* Text color for the button */
 }
 
-/* Use the ::after pseudo-element for the underline on active language */
-.language-switch a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px; /* Adjust as needed */
-    height: 2px;
-    width: 100%;
-    background-color: #007bff;
+.language-switch button.active {
+    font-weight: bold; /* Makes the active language bold */
 }
+
+.language-switch button.active::after {
+    content: ''; /* Creates content for the underline */
+    position: absolute; /* Positions the underline absolutely within the button */
+    bottom: -5px; /* Positions the underline below the text */
+    left: 0; /* Aligns the underline to the left of the button */
+    width: 100%; /* Underline should be as wide as the button's text */
+    height: 2px; /* Thickness of the underline */
+    background-color: #0066cc; /* Color of the underline */
+}
+
+.language-switch span {
+    color: #333; /* Color of the separator */
+}
+
 
 /* Main content should flex-grow to push the footer down */
 main {
@@ -279,6 +290,45 @@ main {
     max-width: 100%; /* Adjust as needed */
     height: auto;
     border-radius: 10px; /* Optional: for rounded corners */
+}
+
+/* ... existing styles ... */
+
+#news-feed {
+    /* ... existing styles ... */
+    max-height: 300px; /* for scrollable area */
+    overflow-y: auto; /* enable vertical scrolling */
+}
+
+/* Scrollable news feed specific styles */
+#news-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* remove bullet points */
+}
+
+#news-list li {
+    border-bottom: 1px solid #e1e1e1; /* light line between entries */
+    padding: 10px; /* spacing around news content */
+}
+
+#news-list time {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Style for scrollbar (for webkit browsers) */
+#news-feed::-webkit-scrollbar {
+    width: 6px;
+}
+
+#news-feed::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+#news-feed::-webkit-scrollbar-track {
+    background: #f0f0f0;
 }
 
 /* Style for the main content areas */
