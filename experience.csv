@@ -1,0 +1,5 @@
+index, start_date, end_date, institution, title, description, link
+"4", "2022-04", "2024-03", "University of Tokyo, Faculty of Engineering, App", "Senior Thesis advised by Prof. Kosuke Yoshioka", "", "http://www.fs.t.u-tokyo.ac.jp/index.html"
+"3", "2023-07", "2023-09", "Cornell University, Electrical and Computer Engineering Department, Photonics and Quantum Electronics Group", "Research Intern advised by Prof. Karan Mehta", "", "https://sites.coecis.cornell.edu/mehta/"
+"2", "2022-09", "2023-06", "ETH Zurich, Department of Physics, Trapped Ion Quantum Information Group", "Research Project advised by Prof. Jonathan Home", "", "https://tiqi.ethz.ch/"
+"1", "2021-07", "2022-07", "Yanekara Inc.", "Internship", "", "https://yanekara.jp/"

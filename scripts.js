@@ -43,6 +43,37 @@ function loadNewsUpdates() {
         .catch(error => console.error('Error loading news updates:', error));
 }
 
+
+
+// Function to load and display experience entries from the CSV file
+function loadExperience() {
+    fetch('experience.csv') // Make sure this is the correct path
+        .then(response => response.text())
+        .then(parseCSV)
+        .then((rows) => {
+            const listElement = document.getElementById('experience-list');
+            listElement.innerHTML = ''; // Clear existing items
+
+            // Skip the header row and process data rows
+            rows.slice(1).forEach(row => {
+                const [index, start_date, end_date, institution, title, description, link] = row;
+
+                // Create list item for each experience entry
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <time datetime="${start_date}">${start_date}</time> - 
+                    <time datetime="${end_date}">${end_date}</time>
+                    <strong>${title}</strong> \<br>at ${institution}
+                    <p>${description}</p>
+                    ${link ? `<a href="${link}" target="_blank">More Info</a>` : ''}
+                `;
+                listElement.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error loading experience entries:', error));
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const enBtn = document.getElementById('en-btn');
     const jpBtn = document.getElementById('jp-btn');
@@ -64,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jpBtn.classList.add('active');
         }
         loadNewsUpdates(); // Reload news updates after language switch
+
     }
 
     // Event listeners for the language buttons
@@ -72,4 +104,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set the initial language
     updateActiveLanguage(currentLanguage);
+    loadExperience();
 });

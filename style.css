@@ -300,6 +300,12 @@ main {
     overflow-y: auto; /* enable vertical scrolling */
 }
 
+#news-feed > h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
 /* Scrollable news feed specific styles */
 #news-list {
     margin: 0;
@@ -330,6 +336,55 @@ main {
 #news-feed::-webkit-scrollbar-track {
     background: #f0f0f0;
 }
+
+#experience-feed {
+    max-width: 800px; /* Maximum width of the experience feed section */
+    margin: 0 auto; /* Center the experience feed */
+    padding: 20px;
+}
+
+#experience-feed > h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.experience-container {
+    border: 1px solid #ddd; /* Border for the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    padding: 15px;
+    margin-top: 20px; /* Space above the container */
+    background-color: #f9f9f9; /* Light background for the container */
+}
+
+.experience-container ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.experience-container li {
+    border-bottom: 1px solid #e1e1e1; /* Separator between items */
+    padding: 10px 0; /* Padding above and below each item */
+}
+
+.experience-container li:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.experience-container time {
+    font-weight: normal; /* Bold font for dates */
+}
+
+.experience-container a {
+    color: #007bff; /* Color for links */
+    text-decoration: none; /* No underline for links */
+}
+
+.experience-container a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
 
 /* Style for the main content areas */
 .content-section {
