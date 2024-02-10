@@ -3,95 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuto Motohasi - Researcher</title>
+    <title>Yuto Motohashi - Researcher</title>
+    <!-- If you have a favicon.ico, you can link it here -->
+    <link rel="icon" href="path_to_your_favicon.ico" type="image/x-icon">
+    <!-- Ensure the path to your CSS file is correct if you have external CSS -->
     <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWBYVKG28X"></script>
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <h1><a href="index.html">Yuto Motohashi</a></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/" class="active">HOME</a></li>
-                <li><a href="src/publications.html">PUBLICATION</a></li>
-                <li><a href="src/cv.html">CV</a></li>
-            </ul>
-            <div class="language-switch">
-                <button id="en-btn">EN</button>
-                <span>|</span>
-                <button id="jp-btn">JP</button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWBYVKG28X"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TWBYVKG28X');
-    </script>
-
-    <main>
-        <div id="en-content">
-            <section id="profile" class="profile-container">
-                <div class="profile-info">
-                <h2>Yuto Motohashi</h2>
-                <p>Applied Physics, Engineering, The University of Tokyo</p>
-                <h2>Contact:</h2><br>
-                <p><a href="mailto:motohashi-yuto@g.ecc.u-tokyo.ac.jp"> motohashi-yuto@g.ecc.u-tokyo.ac.jp</a></p>
-                <p><a href="https://www.linkedin.com/in/yuto-motohashi/" target="_blank">LinkedIn: Yuto Motohashi</a></p>
-                <p><a href="https://twitter.com/Yuto_Motohashi" target="_blank">Twitter: @Yuto_Motohashi</a></p>
-                </div>
-                <div class="profile-photo">
-                    <img src="src/portrait.jpg" alt="Yuto Motohashi">
-                </div>
-            </section>
-    </div>
-    <div id="jp-content">
-        <section id="profile" class="profile-container">
-            <div class="profile-info">
-            <h2>本橋　悠人</h2>
-            <p>東京大学工学部物理工学科</p>
-            <h2>Contact:</h2><br>
-            <p><a href="mailto:motohashi-yuto@g.ecc.u-tokyo.ac.jp"> motohashi-yuto@g.ecc.u-tokyo.ac.jp</a></p>
-            <p><a href="https://www.linkedin.com/in/yuto-motohashi/" target="_blank">LinkedIn: Yuto Motohashi</a></p>
-            <p><a href="https://twitter.com/Yuto_Motohashi" target="_blank">Twitter: @Yuto_Motohashi</a></p>
-            </div>
-            <div class="profile-photo">
-                <img src="src/portrait.jpg" alt="Yuto Motohashi">
-            </div>
-        </section>
-    </div>
-            
-    <div id="news-feed">
-        <h2>Latest Updates</h2>
-        <div class="news-container">
-            <ul id="news-list">
-                <!-- News items will be populated here by the JavaScript -->
-            </ul>
-        </div>
-    </div>
-
-    <div id="experience-feed">
-        <h2>Experience</h2>
-        <div class="experience-container">
-            <ul id="experience-list">
-                <!-- Experience items will be populated here by the JavaScript -->
-            </ul>
-    </div>
-    
-        
-
-    </main>
-
-    <footer>
-        <p>© 2023 Yuto Motohashi. All Rights Reserved.</p>
-    </footer>
-
-    <script src="scripts.js"></script>
+    <div id="root"></div> <!-- React will render your app inside this div -->
+    <!-- Below, ensure the path to your bundled script is correct -->
+    <script src="dist/main.js"></script>
 </body>
 </html>

@@ -23,34 +23,15 @@ body {
     margin: 0;
 }   
 
-
-.header-top h1 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #333;
-}
-
-.header-top h1 a {
-    color: #333; /* Match the color to your header-top text color */
-    text-decoration: none; /* Remove the underline from the link */
-    transition: color 0.3s ease; /* Optional: Smooth transition for hover effect */
-    display: inline-block; /* Allows margin to be applied properly */
-    margin-top: 10px; /* Adjust the value as needed */
-    margin-bottom: 10px; /* Adjust the value as needed */
-    margin-left: 20px; /* Adjust the value as needed */
-    margin-right: 20px; /* Adjust the value as needed */
-}
-
-/* Navigation styles */
-nav {
+header nav {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
     align-items: center;
-    height: 60px; /* Set the height of the header */
+    height: 60px; /* Adjust the height as necessary */
 }
 
-nav ul {
+header ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -58,65 +39,52 @@ nav ul {
     align-items: center;
 }
 
-nav ul li {
+header li {
     margin-right: 20px;
 }
 
-nav ul li a {
-    text-decoration: none;
+header li button {
+    background: none;
+    border: none;
     color: #333;
-    padding: 20px 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as necessary */
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
+header li button:hover {
     color: #007bff;
-}
-
-nav ul li a.active {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-}
-
-/* Active link indicator for main navigation and language switch */
-nav ul li a.active {
-    color: #007bff; /* Active color for main nav */
-    border-bottom: 2px solid #007bff; /* Underline for active nav item */
 }
 
 .language-switch {
-    display: inline-block; /* Positions the buttons inline with space for the underline */
-    font-size: 1em; /* Sets the font size for the language switch */
+    display: flex;
+    align-items: center;
 }
 
 .language-switch button {
-    background: none; /* No background color */
-    border: none; /* No border */
-    font-size: inherit; /* Inherits font size from parent */
-    padding: 10px; /* Space around the text */
-    margin: 0 5px; /* Space between buttons and separator */
-    cursor: pointer; /* Changes cursor to pointer to signify a clickable item */
-    position: relative; /* Sets up positioning context for the underline */
-    outline: none; /* Removes the default focus outline */
-    color: #333; /* Text color for the button */
+    background: none;
+    border: none;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-.language-switch button.active {
-    font-weight: bold; /* Makes the active language bold */
+.language-switch button:hover {
+    color: #007bff;
 }
 
-.language-switch button.active::after {
-    content: ''; /* Creates content for the underline */
-    position: absolute; /* Positions the underline absolutely within the button */
-    bottom: -5px; /* Positions the underline below the text */
-    left: 0; /* Aligns the underline to the left of the button */
-    width: 100%; /* Underline should be as wide as the button's text */
-    height: 2px; /* Thickness of the underline */
-    background-color: #0066cc; /* Color of the underline */
-}
 
 .language-switch span {
-    color: #333; /* Color of the separator */
+    margin: 0 10px;
+    color: #333;
+}
+
+header li button.active, .language-switch button.active {
+    color: #007bff; /* Active button text color */
+    border-bottom: 2px solid #007bff; /* Underline for active button */
+    font-weight: bold;
 }
 
 
@@ -336,25 +304,19 @@ main {
 #news-feed::-webkit-scrollbar-track {
     background: #f0f0f0;
 }
-
-#experience-feed {
-    max-width: 800px; /* Maximum width of the experience feed section */
-    margin: 0 auto; /* Center the experience feed */
-    padding: 20px;
+.experience-container {
+    max-width: 800px; /* Maximum width of the experience container */
+    margin: 0 auto; /* Center the experience container */
+    padding: 5px;
+    border: 1px solid #ddd; /* Border for the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    background-color: #f9f9f9; /* Light background for the container */
 }
 
-#experience-feed > h2 {
+.experience-container h2 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 1em;
-}
-
-.experience-container {
-    border: 1px solid #ddd; /* Border for the container */
-    border-radius: 8px; /* Rounded corners for the container */
-    padding: 15px;
-    margin-top: 20px; /* Space above the container */
-    background-color: #f9f9f9; /* Light background for the container */
 }
 
 .experience-container ul {
@@ -365,7 +327,7 @@ main {
 
 .experience-container li {
     border-bottom: 1px solid #e1e1e1; /* Separator between items */
-    padding: 10px 0; /* Padding above and below each item */
+    padding: 5px 0; /* Padding above and below each item */
 }
 
 .experience-container li:last-child {
@@ -373,17 +335,23 @@ main {
 }
 
 .experience-container time {
-    font-weight: normal; /* Bold font for dates */
+    font-weight: bold; /* Bold font for dates */
+}
+
+.experience-container strong {
+    display: block; /* Make title stand out on its own line */
+    margin-top: 5px; /* Spacing for clarity */
 }
 
 .experience-container a {
-    color: #007bff; /* Color for links */
-    text-decoration: none; /* No underline for links */
+    display: inline-block; /* Better control over styling */
+    color: #007bff; /* Contrast with button */
+    padding: 6px 12px; /* Button padding */
+    border-radius: 4px; /* Rounded corners for the button */
+    text-decoration: none; /* No underline */
+    margin-top: 10px; /* Separate from description */
 }
 
-.experience-container a:hover {
-    text-decoration: underline; /* Underline on hover for links */
-}
 
 
 /* Style for the main content areas */
@@ -392,46 +360,81 @@ main {
     padding: 20px;
     margin-bottom: 20px;
     background: #f9f9f9; /* Light grey background for content sections */
-    border-radius: 8px; /* Optional: rounded corners for content sections */
+    border-radius: 8px; /* Rounded corners for content sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border: 1px solid #eaeaea; /* Subtle border for definition */
 }
 
-
 .content-section h2 {
-    /* ... existing styles ... */
+    margin-top: 0;
+    color: #333; /* Dark grey for better readability */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eaeaea; /* Light line under the section title */
+    font-size: 24px; /* Slightly larger font size for section titles */
 }
 
 .content-section ul {
+    list-style-type: none; /* No bullets */
     padding-left: 0; /* Removes default padding */
+    margin-top: 20px; /* Space between the title and the list */
 }
+
+.content-section ul li {
+    background: #fff; /* White background for list items */
+    margin-bottom: 10px; /* Space between list items */
+    padding: 10px;
+    border-radius: 5px; /* Slightly rounded corners for list items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Soft shadow for list items */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between elements inside list items */
+}
+
+.content-section ul li a {
+    color: #007bff; /* Theme color for links */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Makes links bold */
+}
+
+.content-section ul li a:hover {
+    text-decoration: underline; /* Underline on hover for better interactivity */
+}
+
 
 .publication-entry {
-    list-style-type: none; /* Removes default list styling */
-    margin-bottom: 15px;
+    border-bottom: 1px solid #eaeaea; /* Adds a separator between entries */
+    padding-bottom: 15px; /* Spacing at the bottom of each entry */
+    margin-bottom: 15px; /* Spacing between entries */
 }
 
-.publication-citation {
-    line-height: 1.6;
-    margin-bottom: 5px;
+.publication-author,
+.publication-title,
+.publication-journal,
+.publication-date {
+    margin: 5px 0; /* Vertical spacing for readability */
 }
 
-.publication-citation em {
-    font-style: italic;
+.publication-title {
+    font-weight: bold; /* Emphasizes the title */
+    color: #333; /* Darker color for better readability */
+    font-size: 16px; /* Slightly larger font size for titles */
 }
 
-.publication-details {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.publication-details a {
+.publication-links a {
+    display: inline-block;
     color: #007bff;
+    padding: 6px 12px;
+    border-radius: 4px;
     text-decoration: none;
+    margin-top: 10px;
+    margin-right: 5px; /* Adds a small gap between multiple links */
+    transition: background-color 0.3s;
 }
 
-.publication-details a:hover {
-    text-decoration: underline;
-}
+/* .publication-links a:hover {
+    background-color: #0056b3;
+} */
+
 
 /* CV Section specific styles */
 .cv-section {
