@@ -260,7 +260,27 @@ main {
     border-radius: 10px; /* Optional: for rounded corners */
 }
 
-/* ... existing styles ... */
+.social-links-container {
+    display: flex;
+    justify-content: center; /* Center the social links container */
+    margin-top: 10px; /* Space from the email link */
+}
+
+.social-links {
+    display: flex;
+    gap: 20px; /* Space between logos */
+}
+
+.social-links a img {
+    height: 36px; /* Default logo size, adjustable */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.social-links a:hover img {
+    transform: scale(1.2); /*Increase scale on hover*/
+}
+
+
 
 #news-feed {
     /* ... existing styles ... */

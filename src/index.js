@@ -8,6 +8,9 @@ import { parse } from 'papaparse';
 import newsItems from './news_db';
 import experienceItems from './experience';
 import publicationsData from './publication';
+import xLogo from './LOGO_x.png';
+import linkedInLogo from './LOGO_LI-In.png';
+import gitHubLogo from './LOGO_GitHub.png';
 
 const NewsUpdates = ({ currentLanguage }) => {
   // Convert the news items based on the currentLanguage prop
@@ -58,10 +61,8 @@ const ExperienceContainer = ({ language }) => {
     </div>
   );
 };
-  
 
 const Home = ({ language }) => {
-  // Profile Component
   const Profile = () => (
     <section id="profile" className="profile-container">
       <div className="profile-info">
@@ -78,8 +79,19 @@ const Home = ({ language }) => {
         )}
         <h2>Contact:</h2>
         <p><a href="mailto:motohashi-yuto@g.ecc.u-tokyo.ac.jp">motohashi-yuto@g.ecc.u-tokyo.ac.jp</a></p>
-        <p><a href="https://www.linkedin.com/in/yuto-motohashi/" target="_blank" rel="noopener noreferrer">LinkedIn: Yuto Motohashi</a></p>
-        <p><a href="https://twitter.com/Yuto_Motohashi" target="_blank" rel="noopener noreferrer">Twitter: @Yuto_Motohashi</a></p>
+        <div className="social-links-container">
+          <div className="social-links">
+            <a href="https://github.com/YutoMotohashi" target="_blank" rel="noopener noreferrer">
+              <img src={gitHubLogo} alt="GitHub: Yuto Motohashi" />
+            </a>
+            <a href="https://www.linkedin.com/in/yuto-motohashi/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedInLogo} alt="LinkedIn: Yuto Motohashi" />
+            </a>
+            <a href="https://x.com/Yuto_Motohashi" target="_blank" rel="noopener noreferrer">
+              <img src={xLogo} alt="X: Yuto Motohashi" />
+            </a>
+          </div>
+        </div>
       </div>
       <div className="profile-photo">
         <img src={portrait} alt="Yuto Motohashi" />
