@@ -171,9 +171,19 @@ const CV = ({ language }) => {
   );
 };
 
+
 const App = () => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('en'); // Default language
   const [currentPage, setCurrentPage] = useState('home');
+
+  // Extract language from URL at the start
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const urlLanguage = queryParams.get('language');
+    if (urlLanguage && (urlLanguage === 'en' || urlLanguage === 'ja')) {
+      setLanguage(urlLanguage);
+    }
+  }, []);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -207,7 +217,7 @@ const App = () => {
             <div className="language-switch">
                 <button className={language === 'en' ? 'active' : ''} onClick={() => setLanguage('en')}>EN</button>
                 <span>|</span>
-                <button className={language === 'jp' ? 'active' : ''} onClick={() => setLanguage('jp')}>JP</button>
+                <button className={language === 'ja' ? 'active' : ''} onClick={() => setLanguage('ja')}>JA</button>
             </div>
           </nav>
       </header>
