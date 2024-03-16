@@ -43,7 +43,6 @@ const NewsUpdates = ({ currentLanguage }) => {
 };
 
 const ExperienceContainer = ({ language }) => {
-
   return (
     <div className="experience-container">
       <h2>{language === 'en' ? 'Experience' : '経験'}</h2>
@@ -52,8 +51,8 @@ const ExperienceContainer = ({ language }) => {
           <li key={index}>
             <time dateTime={exp.start_date}>{exp.start_date}</time> - 
             <time dateTime={exp.end_date}>{exp.end_date ? exp.end_date : 'Present'}</time>
-            <strong> {exp.title}</strong> <br/>at {exp.institution}
-            {exp.description && <p>{exp.description}</p>}
+            <strong> {language === 'en' ? exp.title_en : exp.title_ja}</strong> <br/>at {language === 'en' ? exp.institution_en : exp.institution_ja}
+            {exp[`description_${language}`] && <p>{exp[`description_${language}`]}</p>}
             {exp.link && <a href={exp.link} target="_blank" rel="noopener noreferrer">More Info</a>}
           </li>
         ))}
