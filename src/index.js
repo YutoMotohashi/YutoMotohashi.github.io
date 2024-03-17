@@ -68,15 +68,17 @@ const Home = ({ language }) => {
         {language === 'en' ? (
           <>
             <h2>Yuto Motohashi</h2>
-            <p>Applied Physics, Engineering, The University of Tokyo</p>
+            <p>Applied Physics, Engineering, The University of Tokyo until March 2024</p>
+            <p>I am Yuto, and am interested in trapped ion quantum computer. Enjoy working on the experimental research in it!</p>
           </>
         ) : (
           <>
             <h2>本橋　悠人</h2>
-            <p>東京大学工学部物理工学科</p>
+            <p>東京大学工学部物理工学科を２０２４年３月に卒業</p>
+            <p>原子を用いた量子コンピュータ（イオントラップ型）の実現を目指して、実験研究を行っています。過去に行った研究の詳細はpublicationのページをご覧ください。</p>
           </>
         )}
-        <h2>Contact:</h2>
+        <h2>{language === 'en' ? 'Contact' : '連絡先'}</h2>
         <p><a href="mailto:motohashi-yuto@g.ecc.u-tokyo.ac.jp">motohashi-yuto@g.ecc.u-tokyo.ac.jp</a></p>
         <div className="social-links-container">
           <div className="social-links">
