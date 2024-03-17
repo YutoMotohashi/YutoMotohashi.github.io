@@ -45,7 +45,7 @@ const NewsUpdates = ({ currentLanguage }) => {
 const ExperienceContainer = ({ language }) => {
   return (
     <div className="experience-container">
-      <h2>{language === 'en' ? 'Experience' : '経験'}</h2>
+      <h2>{language === 'en' ? 'Experience' : '経歴'}</h2>
       <ul id="experience-list">
         {experienceItems.map((exp, index) => (
           <li key={index}>
