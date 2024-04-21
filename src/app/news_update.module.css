@@ -1,0 +1,53 @@
+.newsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    /*margin-top: 20px;/*/
+    margin: 10px auto;
+    padding: 20px;
+    max-width: 1200px;
+    /* Adjust as needed */
+    max-height: 600px;
+    /* for scrollable area */
+    overflow-y: auto;}
+
+
+/* Scrollable news feed specific styles */
+.newsContainer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    /* remove bullet points */
+}
+
+.newsContainer ul li {
+    border-bottom: 1px solid #e1e1e1;
+    /* light line between entries */
+    padding: 10px;
+    /* spacing around news content */
+}
+
+.newsContainer ul time {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.linkedTitle {
+    text-decoration: underline; /* Underline to emphasize that it's a link */
+    cursor: pointer;   /* Ensures cursor changes to pointer on hover */
+}
+
+/* Style for scrollbar (for webkit browsers) */
+#news-feed::-webkit-scrollbar {
+    width: 6px;
+}
+
+#news-feed::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+#news-feed::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}

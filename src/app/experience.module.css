@@ -1,0 +1,59 @@
+
+.experienceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    /*margin-top: 20px;/*/
+    margin: 10px auto;
+    padding: 20px;
+    max-width: 1200px;
+    /* Adjust as needed */
+    max-height: 1200px;
+    /* for scrollable area */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /*background-color: #f9f9f9; /* Light background for the container */
+}
+
+.experienceContainer h2 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.experienceContainer ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    /* wrap text */
+    white-space: normal;
+}
+
+.experienceContainer li {
+    border-bottom: 1px solid #e1e1e1; /* Separator between items */
+    padding: 5px 0; /* Padding above and below each item */
+}
+
+.experienceContainer li:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.experienceContainer time {
+    font-weight: bold; /* Bold font for dates */
+}
+
+.experienceContainer strong {
+    display: block; /* Make title stand out on its own line */
+    margin-top: 5px; /* Spacing for clarity */
+}
+
+.experienceContainer a {
+    display: inline-block; /* Better control over styling */
+    color: #007bff; /* Contrast with button */
+    padding: 6px 12px; /* Button padding */
+    border-radius: 4px; /* Rounded corners for the button */
+    text-decoration: none; /* No underline */
+    margin-top: 10px; /* Separate from description */
+}
+

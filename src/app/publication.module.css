@@ -1,0 +1,44 @@
+.publicationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 10px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.publicationEntry {
+    border-bottom: 1px solid #eaeaea; /* Adds a separator between entries */
+    padding-bottom: 15px; /* Spacing at the bottom of each entry */
+    margin-bottom: 15px; /* Spacing between entries */
+    list-style-type: none;
+}
+
+.publicationAuthor,
+.publicationJournal,
+.publicationDate {
+    margin: 5px 0; /* Vertical spacing for readability */
+}
+
+.publicationTitle {
+    font-weight: bold; /* Emphasizes the title */
+    font-size: 16px; /* Slightly larger font size for titles */
+}
+
+.publicationLinks a {
+    display: inline-block;
+    color: #007bff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 5px; /* Adds a small gap between multiple links */
+    transition: background-color 0.3s ease;
+}
+
+.publicationLinks a:hover {
+    transform: scale(1.05);
+    /* underline add*/
+    text-decoration: underline;
+}
