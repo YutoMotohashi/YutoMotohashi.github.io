@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from "next/image";
+// import Image from "next/image";
 import gitHubLogo from "./data/LOGO_GitHub.png";
 import linkedInLogo from "./data/LOGO_LI-In.png";
 import xLogo from "./data/LOGO_x.png";
@@ -36,7 +36,7 @@ function Profile({ language }) {
                 </div>
             </div>
             <div className={profile.profilePhoto}>
-                <Image src={portrait} alt="Yuto Motohashi" />
+                <img src={portrait} alt="Yuto Motohashi" />
             </div>
         </section>
     </>)
@@ -46,13 +46,13 @@ function SocialLink() {
     return (
         <>
             <a href="https://github.com/YutoMotohashi" target="_blank" rel="noopener noreferrer">
-                <Image className={profile.logoImage} src={gitHubLogo} alt="GitHub: Yuto Motohashi" />
+                <img className={profile.logoImage} src={gitHubLogo} alt="GitHub: Yuto Motohashi" />
             </a>
             <a href="https://www.linkedin.com/in/yuto-motohashi/" target="_blank" rel="noopener noreferrer">
-                <Image className={profile.logoImage} src={linkedInLogo} alt="LinkedIn: Yuto Motohashi" />
+                <img className={profile.logoImage} src={linkedInLogo} alt="LinkedIn: Yuto Motohashi" />
             </a>
             <a href="https://x.com/Yuto_Motohashi" target="_blank" rel="noopener noreferrer">
-                <Image className={profile.logoImage} src={xLogo} alt="X: Yuto Motohashi" />
+                <img className={profile.logoImage} src={xLogo} alt="X: Yuto Motohashi" />
             </a>
         </>
     )
