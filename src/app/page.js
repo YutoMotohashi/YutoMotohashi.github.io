@@ -8,6 +8,7 @@ import styles from "./page.module.css";
 import Home from "./home";
 import Publications from "./publication";
 import CV from "./cv";
+import Links from "./links";
 
 
 export default function App(){
@@ -41,6 +42,12 @@ export default function App(){
         return (
           <div className={styles.main}>
             <CV language={language} />
+          </div>
+        )
+      case 'links':
+        return (
+          <div className={styles.main}>
+            <Links language={language} />
           </div>
         )
       default:
@@ -86,6 +93,9 @@ export default function App(){
               </li>
               <li>
                   <button className={currentPage === 'cv' ? styles.active : ''} onClick={() => setCurrentPage('cv')}>CV</button>
+              </li>
+              <li>
+                  <button className={currentPage === 'links' ? styles.active : ''} onClick={() => setCurrentPage('links')}>LINKS</button>
               </li>
             </ul>
 

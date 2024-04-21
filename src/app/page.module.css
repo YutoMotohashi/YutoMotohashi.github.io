@@ -128,7 +128,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(2, minmax(50%, auto));
   max-width: 100%;
   width: var(--max-width);
 }
@@ -156,7 +156,7 @@
   opacity: 0.6;
   font-size: 0.9rem;
   line-height: 1.5;
-  max-width: 30ch;
+  max-width: 60ch;
   text-wrap: balance;
 }
 
@@ -220,7 +220,7 @@
   .header nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 5px;
+    padding: 0 10px;
     align-items: center;
     height: 60px; /* Adjust the height as necessary */
   }
@@ -241,7 +241,7 @@
   .languageSwitch button  {
     background: none;
     border: none;
-    padding: 5px 5px;
+    padding: 5px 0;
     cursor: pointer;
     font-size: 14px; /* Adjust font size as necessary */
     transition: color 0.3s;
