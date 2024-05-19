@@ -26,7 +26,7 @@ function Links({ language }) {
                     <h2>
                         大学院受験記 <span>-&gt;</span>
                     </h2>
-                    <p>XPLANEに寄稿した大学院受験記はこちら</p>
+                    <p>XPLANEに寄稿した海外大学院受験記はこちら</p>
                 </a>
                 <a
                     href="https://www.utokyo-ipc.co.jp/ja/story/internship-yanekara-motohashi/"
