@@ -18,6 +18,17 @@ function Links({ language }) {
                     <p>ETH Zurichに一年間交換留学した時に関連する情報はこちら</p>
                 </a>
                 <a
+                    href="https://funaifoundation.jp/grantee.php?id=507&type=phd"
+                    className={styles.card}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <h2>
+                        大学院の様子 <span>-&gt;</span>
+                    </h2>
+                    <p>船井情報科学奨学生としての報告書はこちら</p>
+                </a>
+                <a
                     href="https://xplane.jp/enroll2024-1-motohashi/"
                     className={styles.card}
                     target="_blank"
