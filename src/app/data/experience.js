@@ -3,7 +3,7 @@ export const scientificExperienceItems = [
         index: 3,
         start_date: `2022-04`,
         end_date: `2024-03`,
-        institution_en: `University of Tokyo, Faculty of Engineering, School of Applied Physics`,
+        institution_en: `The University of Tokyo, Faculty of Engineering, School of Applied Physics`,
         institution_ja: `東京大学工学部物理工学科`,
         title_en: `Senior Thesis`,
         title_ja: `卒業研究`,
