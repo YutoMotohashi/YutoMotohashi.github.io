@@ -4,7 +4,7 @@ import NewsUpdates from "./news_update";
 import Profile from "./profile";
 import styles from "./page.module.css";
 
-import { scientificExperienceItems, industrialExperienceItems } from './data/experience';
+import { educationExperienceItems, scientificExperienceItems, industrialExperienceItems } from './data/experience';
 
 function Home({ language }) {
     return (
@@ -17,6 +17,12 @@ function Home({ language }) {
                 <h2>{language === 'en' ? 'Latest Updates' : '最新情報'}</h2>
                 <div className="news-container">
                     <NewsUpdates language={language} />
+                </div>
+            </section>
+            <section id="education-experience-feed">
+                <h2>{language === 'en' ? 'Education' : '学歴'}</h2>
+                <div className="experience-container">
+                    <ExperienceContainer language={language} experienceItems={educationExperienceItems} />
                 </div>
             </section>
             <section id="scientific-experience-feed">
