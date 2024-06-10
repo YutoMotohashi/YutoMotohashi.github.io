@@ -25,12 +25,12 @@ function Profile({ language }) {
                         <p>東京大学工学部物理工学科を2024年3月に卒業</p>
                         <p>ETH Zurich, Master of Quantum Engineeringに2024年9月から進学</p>
                         <p>原子を用いた量子コンピュータ（イオントラップ型）の実現を目指して、実験研究を行っています。</p>
-                        <p>船井情報科学財団奨学生</p>
+                        <p>船井情報科学振興財団奨学生</p>
                         <p>過去に行った研究の詳細はpublicationのページをご覧ください。</p>
                     </>
                 )}
                 <h3>{language === 'en' ? 'Contact' : '連絡先'}</h3>
-                <p>yuto.motohas__at__gmail.com</p>
+                <p>ymotohashi__at__ethz.ch</p>
                 <div id="sociallinkbox" className={profile.socialLinksContainer}>
                     <div id="sociallinks" className={profile.socialLinks}>
                     <SocialLink />

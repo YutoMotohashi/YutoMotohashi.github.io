@@ -13,9 +13,9 @@ function Links({ language }) {
                     rel="noopener noreferrer"
                 >
                     <h2>
-                        スイス交換留学の記録 <span>-&gt;</span>
+                        ETH Zurichへの交換留学　<span>-&gt;</span>
                     </h2>
-                    <p>ETH Zurichに一年間交換留学した時に関連する情報はこちら</p>
+                    <p>学士課程中にETH Zurich &lt; = &gt; 東京大学で一年間交換留学した時の情報はこちら</p>
                 </a>
                 <a
                     href="https://funaifoundation.jp/grantee.php?id=507&type=phd"
@@ -24,9 +24,9 @@ function Links({ language }) {
                     rel="noopener noreferrer"
                 >
                     <h2>
-                        大学院の様子 <span>-&gt;</span>
+                        Funai Overseas Scholarship 報告書　<span>-&gt;</span>
                     </h2>
-                    <p>船井情報科学奨学生としての報告書はこちら</p>
+                    <p>大学院留学を支援いただいている、船井情報科学振興財団のサイトに、奨学生としての報告書を公開しています</p>
                 </a>
                 <a
                     href="https://xplane.jp/enroll2024-1-motohashi/"
@@ -35,7 +35,7 @@ function Links({ language }) {
                     rel="noopener noreferrer"
                 >
                     <h2>
-                        大学院受験記 <span>-&gt;</span>
+                        大学院受験記　<span>-&gt;</span>
                     </h2>
                     <p>XPLANEに寄稿した海外大学院受験記はこちら</p>
                 </a>
@@ -46,7 +46,7 @@ function Links({ language }) {
                     rel="noopener noreferrer"
                 >
                     <h2>
-                        Yanekaraでのインターン <span>-&gt;</span>
+                        Yanekaraでのインターン　<span>-&gt;</span>
                     </h2>
                     <p>Yanekaraでのエンジニアインターンの時のインタビューはこちら</p>
                 </a>
