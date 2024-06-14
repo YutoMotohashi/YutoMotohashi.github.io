@@ -20,7 +20,7 @@ function Home({ language }) {
                 </div>
             </section>
             <section id="education-experience-feed">
-                <h2>{language === 'en' ? 'Education' : '学歴'}</h2>
+                <h2>{language === 'en' ? 'Education' : '経歴'}</h2>
                 <div className="experience-container">
                     <ExperienceContainer language={language} experienceItems={educationExperienceItems} />
                 </div>
