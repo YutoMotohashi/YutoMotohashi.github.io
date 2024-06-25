@@ -1,5 +1,17 @@
 export const scientificExperienceItems = [
     {
+        index: 4,
+        start_date: `2024-06`,
+        end_date: `Present`,
+        institution_en: `ETH Zurich, Department of Physics, Trapped Ion Quantum Information Group`,
+        institution_ja: `スイス連邦工科大学チューリッヒ校 Department of Physics, Trapped Ion Quantum Information Group`,
+        title_en: `Research Assistant`,
+        title_ja: `リサーチアシスタント`,
+        description_en: ``,
+       description_ja: ``,
+        link: `https://tiqi.ethz.ch/`
+    },
+    {
         index: 3,
         start_date: `2022-04`,
         end_date: `2024-03`,
