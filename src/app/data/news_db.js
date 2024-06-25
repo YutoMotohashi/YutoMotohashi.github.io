@@ -2,6 +2,14 @@
 
 const newsItems = [
   {
+    date: "2024-06-25",
+    link: "https://tiqi.ethz.ch/"
+    title_en: "Started position in ETH Zurich TIQI group",
+    description_en: "",
+    title_ja: "スイスのETH ZurichのTIQIグループで研究を始めました",
+    description_ja: ""
+  },
+  {
     date: "2024-04-20",
     link: "https://link.aps.org/doi/10.1103/PhysRevA.109.043520",
     title_en: "Published Paper in Physical Review A",
