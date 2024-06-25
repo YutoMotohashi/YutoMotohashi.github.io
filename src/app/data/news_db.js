@@ -3,7 +3,7 @@
 const newsItems = [
   {
     date: "2024-06-25",
-    link: "https://tiqi.ethz.ch/"
+    link: "https://tiqi.ethz.ch/",
     title_en: "Started position in ETH Zurich TIQI group",
     description_en: "",
     title_ja: "スイスのETH ZurichのTIQIグループで研究を始めました",
