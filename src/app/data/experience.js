@@ -60,18 +60,30 @@ Transportation of Trapped-ion qubit in an integrated photonics QCCD device throu
 export const educationExperienceItems = [
     {
         index: 1,
+        start_date: `2024-09`,
+        end_date: `2026-09 (Expected)`,
+        institution_en: `ETH Zurich, Switzerland`,
+        institution_ja: `スイス連邦工科大学チューリッヒ校`,
+        title_en: `Master of Quantum Engineering`,
+        title_ja: `修士（量子工学）`,
+        description_en: ``,
+        description_ja: ``,
+        link: `https://master-qe.ethz.ch/`
+    },
+    {
+        index: 2,
         start_date: `2019-04`,
         end_date: `2024-03`,
         institution_en: `The University of Tokyo, Faculty of Engineering, School of Applied Physics, Japan`,
         institution_ja: `東京大学工学部物理工学科`,
         title_en: `Bachelor of Engineering`,
-        title_ja: `学士課程`,
+        title_ja: `学士（工学）`,
         description_en: ``,
         description_ja: ``,
         link: ``
     },
     {
-        index: 2,
+        index: 3,
         start_date: `2022-09`,
         end_date: `2023-08`,
         institution_en: `ETH Zurich, Department of Physics, Switzerland`,
