@@ -1,11 +1,23 @@
 import React from 'react';
 import styles from "./page.module.css";
+import Link from 'next/link';
 
 function Links({ language }) {
     return (
         <>
 
             <div className={styles.grid}>
+                <a
+                    href="/blog"
+                    className={styles.card}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <h2>
+                    Visit My Blog　<span>-&gt;</span>
+                    </h2>
+                    <p>工事中。随時更新していきます。</p>
+                </a>
                 <a
                     href="https://github.com/YutoMotohashi/study_abroad_memory"
                     className={styles.card}
@@ -50,7 +62,6 @@ function Links({ language }) {
                     </h2>
                     <p>Yanekaraでのエンジニアインターンの時のインタビューはこちら</p>
                 </a>
-
             </div>
         </>
     );

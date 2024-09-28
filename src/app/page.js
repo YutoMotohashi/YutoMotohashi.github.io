@@ -11,7 +11,7 @@ import CV from "./cv";
 import Links from "./links";
 
 
-export default function App(){
+export default function Page(){
   const [language, setLanguage] = useState('en'); // Default language
   const [currentPage, setCurrentPage] = useState('home');
 

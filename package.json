@@ -7,13 +7,14 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "help": "next --help", 
+    "help": "next --help",
     "webpackbuiild": "webpack --"
   },
   "dependencies": {
-    "next": "14.2.2",
+    "next": "^14.2.13",
     "react": "^18",
     "react-dom": "^18",
+    "react-markdown": "^9.0.1",
     "sharp": "^0.33.3"
   },
   "devDependencies": {
