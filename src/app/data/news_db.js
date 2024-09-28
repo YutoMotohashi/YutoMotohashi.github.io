@@ -2,6 +2,14 @@
 
 const newsItems = [
   {
+    date: "2024-09-17",
+    link: "https://master-qe.ethz.ch/",
+    title_en: "Started Quantum Engineering Master program at ETH Zurich",
+    description_en: "",
+    title_ja: "ETH ZurichでQuantum Engineering Masterのプログラムが始まりました。",
+    description_ja: ""
+  },
+  {
     date: "2024-06-25",
     link: "https://tiqi.ethz.ch/",
     title_en: "Started position in ETH Zurich TIQI group",
