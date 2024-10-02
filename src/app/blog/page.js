@@ -24,11 +24,10 @@ export default function Blog() {
   return (
     <div className={styles.blogContainer}>
       <h1>Blog</h1>
-      工事中。随時更新していきます。
       <ul className={styles.blogList}>
         {posts.map((post) => (
           <li key={post.slug} className={styles.blogListItem}>
-            <Link href={`/blog/${post.slug}`} className={styles.blogLink}>
+            - <Link href={`/blog/${post.slug}`} className={styles.blogLink}>
               {post.title}
             </Link>
           </li>

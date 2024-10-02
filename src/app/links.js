@@ -14,9 +14,9 @@ function Links({ language }) {
                     rel="noopener noreferrer"
                 >
                     <h2>
-                    Visit My Blog　<span>-&gt;</span>
+                    ブログはこちら　<span>-&gt;</span>
                     </h2>
-                    <p>工事中。随時更新していきます。</p>
+                    <p>随時更新していきます。</p>
                 </a>
                 <a
                     href="https://github.com/YutoMotohashi/study_abroad_memory"
