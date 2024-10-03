@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "help": "next --help",
-    "webpackbuiild": "webpack --"
+    "webpackbuiild": "webpack --",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "next": "^14.2.13",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
@@ -21,4 +23,5 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.2"
   }
+  
 }
