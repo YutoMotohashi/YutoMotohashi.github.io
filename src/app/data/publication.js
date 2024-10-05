@@ -6,8 +6,8 @@ const publicationsData = [
         journal: `arXiv preprint arXiv:2308.00877`,
         date: `Submitted 1 August 2023`,
         urls: [{
-            arxiv: `https://arxiv.org/abs/2308.00877`,
-            PRA: `https://link.aps.org/doi/10.1103/PhysRevA.109.043520`
+            PRA: `https://link.aps.org/doi/10.1103/PhysRevA.109.043520`,
+            arxiv: `https://arxiv.org/abs/2308.00877`
         }]
     },
     {
