@@ -7,11 +7,11 @@ function CV({ language }) {
         <>
             {language === 'en' ? (
                 <div className="download-link">
-                    <a href={cv_pdf} download="CV_Yuto_Motohashi.pdf">Download my CV from google drive from here</a>
+                    <a href={cv_pdf} download="CV_Yuto_Motohashi.pdf">Download my CV from google drive from here (last update: 2024 Oct)</a>
                 </div>
             ) : (
                 <div className="download-link">
-                    <a href={cv_pdf} download="CV_Yuto_Motohashi.pdf">CVをgoogle driveをこちらからダウンロード</a>
+                    <a href={cv_pdf} download="CV_Yuto_Motohashi.pdf">CVをgoogle driveをこちらからダウンロード（最終更新: 2024年10月）</a>
                 </div>
             )}
             <style jsx>{`
