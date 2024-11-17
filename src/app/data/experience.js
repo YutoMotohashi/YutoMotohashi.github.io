@@ -80,7 +80,7 @@ export const educationExperienceItems = [
         title_ja: `学士（工学）`,
         description_en: ``,
         description_ja: ``,
-        link: ``
+        link: `https://www.ap.t.u-tokyo.ac.jp/`
     },
     {
         index: 3,
