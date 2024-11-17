@@ -15,7 +15,7 @@ function Profile({ language }) {
                     <>
                         <h2>Yuto Motohashi</h2>
                         <p>Bachelor in Applied Physics, Engineering, The University of Tokyo</p>
-                        <p>Master of Quantum Engineering, ETH Zurich from September 2024 </p>
+                        <p>Student of MSc in Quantum Engineering, ETH Zurich from September 2024 </p>
                         <p>Funai Overseas Scholarship</p>
                         <p>I am Yuto, and am interested in trapped ion quantum computer. Enjoy working on the experimental research in it!</p>
                     </>
@@ -23,7 +23,7 @@ function Profile({ language }) {
                     <>
                         <h2>本橋　悠人</h2>
                         <p>東京大学工学部物理工学科卒業</p>
-                        <p>ETH Zurich, Master of Quantum Engineeringに2024年9月から進学</p>
+                        <p>ETH Zurich, MSc in Quantum Engineeringに2024年9月から進学</p>
                         <p>原子を用いた量子コンピュータ（イオントラップ型）の実現を目指して、実験研究を行っています。</p>
                         <p>船井情報科学振興財団奨学生</p>
                         <p>過去に行った研究の詳細はpublicationのページをご覧ください。</p>
