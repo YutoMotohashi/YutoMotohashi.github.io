@@ -65,7 +65,7 @@ export const educationExperienceItems = [
         institution_en: `ETH Zurich, Switzerland`,
         institution_ja: `スイス連邦工科大学チューリッヒ校`,
         title_en: `Master of Quantum Engineering`,
-        title_ja: `修士（量子工学）`,
+        title_ja: `修士課程（量子工学）`,
         description_en: ``,
         description_ja: ``,
         link: `https://master-qe.ethz.ch/`
