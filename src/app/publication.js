@@ -27,6 +27,7 @@ function Publications({ language }) {
                 </ul>
             </div>
         </section>
-    );
+    )
+}
 
 export default Publications;
