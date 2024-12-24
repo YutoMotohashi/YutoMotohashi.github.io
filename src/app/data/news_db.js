@@ -2,6 +2,14 @@
 
 const newsItems = [
   {
+    date: "2024-12-20",
+    link: "https://journals.aps.org/prx/accepted/65079K16Ca118a0138c947909358cd4d261ac522f",
+    title_en: "Accepted paper in Physical Review X",
+    description_en: "'Multi-zone trapped-ion qubit control in an integrated photonics QCCD device'",
+    title_ja: "Physical Review Xで論文がアクセプト",
+    description_ja: "'Multi-zone trapped-ion qubit control in an integrated photonics QCCD device'"
+  },
+  {
     date: "2024-09-17",
     link: "https://master-qe.ethz.ch/",
     title_en: "Started Quantum Engineering Master program at ETH Zurich",
