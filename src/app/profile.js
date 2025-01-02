@@ -17,7 +17,7 @@ function Profile({ language }) {
                         <p>Bachelor in Applied Physics, Engineering, The University of Tokyo</p>
                         <p>Student of MSc in Quantum Engineering, ETH Zurich from September 2024 </p>
                         <p>Funai Overseas Scholarship</p>
-                        <p>I am Yuto, and am interested in trapped ion quantum computer. Enjoy working on the experimental research in it!</p>
+                        <p>Interested in trapped ion quantum computer, working on the experimental research</p>
                     </>
                 ) : (
                     <>
