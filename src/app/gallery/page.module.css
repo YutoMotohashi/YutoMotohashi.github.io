@@ -1,57 +1,77 @@
-/* Individual gallery item */
-.galleryItem {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(200, 200, 200, 0.3);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  padding: 20px;
+.galleryContainer {
+  /* Center content and match main page margins */
+  max-width: var(--max-width);
+  margin: 15px auto;
+  padding: 30px 15px; /* Spacing similar to .main in main page.module.css */
+}
+
+/* Title styling */
+.galleryTitle {
+  font-size: 2rem;
   text-align: center;
-  max-width: 800px; /* Restrict width */
-  margin: 0 auto; /* Center items horizontally */
-  height: 400px; /* Set a consistent height */
-  display: flex; /* Use flexbox for content alignment */
+  margin-bottom: 1.5rem;
+}
+
+/* Grid layout similar to .grid in main page.module.css */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1em;
+  width: 100%;
+}
+
+/* Consistent with .card in main page.module.css, plus height limit */
+.galleryItem {
+  background: rgba(var(--card-rgb), 0.05);
+  border: 1px solid rgba(var(--card-border-rgb), 0.05);
+  border-radius: var(--border-radius);
+  transition: background 200ms, border 200ms;
+  max-height: 360px;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space out title, content, and description */
-  overflow: hidden; /* Hide overflow content */
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 1rem;
 }
 
-/* Title of gallery items */
+/* Hover styling consistent with main page.module.css cards */
+@media (hover: hover) and (pointer: fine) {
+  .galleryItem:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+}
+
 .galleryItem h2 {
-  font-size: 1.5rem; /* Consistent font size */
-  color: #0070f3;
-  margin-bottom: 10px;
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Description for gallery items */
 .galleryItem p {
   font-size: 1rem;
-  color: #555;
-  margin-bottom: 15px;
-  overflow: hidden; /* Hide overflow content */
-  text-overflow: ellipsis; /* Add ellipsis for overflow */
-  white-space: nowrap; /* Prevent wrapping */
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Styling for images in the gallery */
-.galleryImage {
-  width: 100%;
-  max-height: 200px; /* Limit image height */
-  object-fit: cover; /* Maintain aspect ratio while fitting */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
+/* Clickable media container */
+.galleryMedia {
+  cursor: pointer;
+  outline: none;
 }
 
-/* Styling for videos in the gallery */
+/* Media styling */
+.galleryImage,
 .galleryVideo {
   width: 100%;
-  max-height: 200px; /* Limit video height */
-  object-fit: cover; /* Maintain aspect ratio while fitting */
-  border-radius: 8px;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.75rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
 }

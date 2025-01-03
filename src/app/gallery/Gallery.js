@@ -14,7 +14,6 @@ const Gallery = () => {
             <h2>{item.title}</h2>
             <Link href={`/gallery/${item.slug}`}>
               <div className={styles.galleryMedia} role="button" tabIndex={0}>
-                {/* Render content dynamically based on type */}
                 {item.type === "threejs" && item.component && <item.component />}
                 {item.type === "image" && (
                   <img
