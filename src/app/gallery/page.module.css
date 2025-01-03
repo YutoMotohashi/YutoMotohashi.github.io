@@ -1,0 +1,57 @@
+/* Individual gallery item */
+.galleryItem {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 20px;
+  text-align: center;
+  max-width: 800px; /* Restrict width */
+  margin: 0 auto; /* Center items horizontally */
+  height: 400px; /* Set a consistent height */
+  display: flex; /* Use flexbox for content alignment */
+  flex-direction: column;
+  justify-content: space-between; /* Space out title, content, and description */
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Title of gallery items */
+.galleryItem h2 {
+  font-size: 1.5rem; /* Consistent font size */
+  color: #0070f3;
+  margin-bottom: 10px;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+}
+
+/* Description for gallery items */
+.galleryItem p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Styling for images in the gallery */
+.galleryImage {
+  width: 100%;
+  max-height: 200px; /* Limit image height */
+  object-fit: cover; /* Maintain aspect ratio while fitting */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Styling for videos in the gallery */
+.galleryVideo {
+  width: 100%;
+  max-height: 200px; /* Limit video height */
+  object-fit: cover; /* Maintain aspect ratio while fitting */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}

@@ -24,6 +24,19 @@ function Links({ language }) {
             </div>
             <div className={styles.grid}>
                 <a
+                    href="/gallery"
+                    className={styles.card}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <h2>
+                    ギャラリーはこちら　<span>-&gt;</span>
+                    </h2>
+                    <p>随時更新していきます。</p>
+                </a>
+            </div>
+            <div className={styles.grid}>
+                <a
                     href="https://funaifoundation.jp/grantee.php?id=507&type=phd"
                     className={styles.card}
                     target="_blank"
