@@ -113,7 +113,8 @@ export default function Page(){
       </div>
 
       <div className={styles.footer}>
-        <p>© 2024 Yuto Motohashi. All Rights Reserved.</p>
+        {/* <p>© 2024 Yuto Motohashi. All Rights Reserved.</p> */}
+        <p>© {new Date().getFullYear()} Yuto Motohashi. All Rights Reserved.</p>
         </div>
     </div>
 
