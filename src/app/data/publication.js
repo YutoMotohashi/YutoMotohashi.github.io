@@ -5,7 +5,7 @@ const publicationsData = [
         title: `Multi-zone trapped-ion qubit control in an integrated photonics QCCD device`,
         journal: `Phys. Rev. X`,
         volume: `15`,
-        issue: `10`,
+        issue: `011040`,
         date: `2025`,
         urls: [{
             'Phys. Rev. X': `https://link.aps.org/doi/10.1103/PhysRevX.15.011040`,
