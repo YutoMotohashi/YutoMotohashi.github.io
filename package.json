@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "help": "next --help",
@@ -14,8 +14,8 @@
   "dependencies": {
     "next": "^14.2.13",
     "next-sitemap": "^4.2.3",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "sharp": "^0.33.3",
     "three": "^0.172.0"

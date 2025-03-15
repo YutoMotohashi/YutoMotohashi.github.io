@@ -1,45 +1,77 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+'use client';
 
-// Create a context for language
+import React, { createContext, useState, useEffect, useContext } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+
 const LanguageContext = createContext({
   language: 'en',
   setLanguage: () => {},
   createUrl: () => {}
 });
 
-export function LanguageProvider({ children }) {
+// Safely get URL parameters on client side
+function useLanguageFromURL() {
+  const [urlLanguage, setUrlLanguage] = useState(null);
+  
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('language');
+    if (lang && (lang === 'en' || lang === 'ja')) {
+      setUrlLanguage(lang);
+    }
+  }, []);
+  
+  return urlLanguage;
+}
+
+function LanguageStateProvider({ children }) {
+  const [isClient, setIsClient] = useState(false);
   const [language, setLanguage] = useState('en');
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const router = useRouter();
+  const urlLanguage = useLanguageFromURL();
 
-  // Extract language from URL at the start
+  // Mark when component is mounted on client
   useEffect(() => {
-    const urlLanguage = searchParams.get('language');
-    if (urlLanguage && (urlLanguage === 'en' || urlLanguage === 'ja')) {
-      setLanguage(urlLanguage);
-    }
-  }, [searchParams]);
+    setIsClient(true);
+  }, []);
 
-  // Update URL when language changes
+  // Handle initial language setup
+  useEffect(() => {
+    if (!isClient) return;
+
+    // Priority: URL > localStorage > default
+    if (urlLanguage) {
+      setLanguage(urlLanguage);
+      localStorage.setItem('language', urlLanguage);
+    } else {
+      const savedLanguage = localStorage.getItem('language');
+      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ja')) {
+        setLanguage(savedLanguage);
+      }
+    }
+  }, [isClient, urlLanguage]);
+
   const handleLanguageChange = (newLanguage) => {
+    if (!isClient) return;
     setLanguage(newLanguage);
+    localStorage.setItem('language', newLanguage);
     
-    // Create a new URLSearchParams object
-    const newParams = new URLSearchParams(searchParams.toString());
-    newParams.set('language', newLanguage);
-    
-    // Update the URL without a page refresh
-    router.push(`${pathname}?${newParams.toString()}`);
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('language', newLanguage);
+    router.push(newUrl.pathname + newUrl.search);
   };
 
-  // Create URL with current language parameter
   const createUrl = (path) => {
     const params = new URLSearchParams();
     params.set('language', language);
     return `${path}?${params.toString()}`;
   };
+
+  // Only render children when we're on the client to prevent hydration mismatch
+  if (!isClient) {
+    return <div style={{ visibility: 'hidden' }}>Loading...</div>;
+  }
 
   return (
     <LanguageContext.Provider 
@@ -54,9 +86,20 @@ export function LanguageProvider({ children }) {
   );
 }
 
-// Custom hook to use the language context
+export function LanguageProvider({ children }) {
+  return (
+    <LanguageStateProvider>
+      {children}
+    </LanguageStateProvider>
+  );
+}
+
 export function useLanguage() {
-  return useContext(LanguageContext);
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
 }
 
 export default LanguageContext;
