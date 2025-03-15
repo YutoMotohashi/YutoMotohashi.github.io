@@ -1,32 +1,28 @@
-'use client';
-
-import React, { Suspense } from 'react';
+import React from 'react';
 import fs from 'fs';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
 import styles from './BlogPost.module.css';
 
-function BlogPostContent({ content }) {
-  return (
-    <div className={styles.blogPostContainer}>
-      <ReactMarkdown>{content}</ReactMarkdown>
-    </div>
-  );
-}
+// Define the directory containing markdown files
+const blogDirectory = path.join(process.cwd(), 'src/blog');
 
 // Generate the static paths
 export async function generateStaticParams() {
-  const blogDirectory = path.join(process.cwd(), 'src/blog');
   const filenames = fs.readdirSync(blogDirectory);
   return filenames.map((filename) => ({
     slug: filename.replace('.md', ''),
   }));
 }
 
-export default function BlogPost({ content = '' }) {
+export default function BlogPost({ params }) {
+  const { slug } = params;
+  const filePath = path.join(blogDirectory, `${slug}.md`);
+  const content = fs.readFileSync(filePath, 'utf8');
+
   return (
-    <Suspense fallback={<div>Loading blog post...</div>}>
-      <BlogPostContent content={content} />
-    </Suspense>
+    <div className={styles.blogPostContainer}>
+      <ReactMarkdown>{content}</ReactMarkdown>
+    </div>
   );
 }
