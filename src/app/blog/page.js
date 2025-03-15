@@ -23,22 +23,6 @@ function BlogContent({ posts }) {
   );
 }
 
-export async function getStaticProps() {
-  const blogDirectory = path.join(process.cwd(), 'src/blog');
-  const filenames = fs.readdirSync(blogDirectory);
-
-  const posts = filenames.map((filename) => {
-    const slug = filename.replace('.md', '');
-    const filePath = path.join(blogDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const match = fileContents.match(/^# (.*)/m);
-    const title = match ? match[1].trim() : slug;
-    return { slug, title };
-  });
-
-  return { props: { posts } };
-}
-
 export default function Blog({ posts = [] }) {
   return (
     <Suspense fallback={<div>Loading blog posts...</div>}>

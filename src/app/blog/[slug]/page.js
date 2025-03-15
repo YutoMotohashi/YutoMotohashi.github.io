@@ -23,19 +23,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// Get static props for each page
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const filePath = path.join(process.cwd(), 'src/blog', `${slug}.md`);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  
-  return {
-    props: {
-      content: fileContents,
-    },
-  };
-}
-
 export default function BlogPost({ content = '' }) {
   return (
     <Suspense fallback={<div>Loading blog post...</div>}>
