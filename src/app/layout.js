@@ -2,6 +2,7 @@
 
 import "./globals.css"
 import React from 'react';
+import Script from 'next/script';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from "./page.module.css";
@@ -17,20 +18,21 @@ function RootLayoutContent({ children }) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta content="fCEFYasOakKKA_2EZiHN0QmJTZq1Nju5N3XWzCYKrfw" />
-        <script
-          async
+        <Script
+          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-TWBYVKG28X"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments); }
-              gtag('js', new Date());
-              gtag('config', 'G-TWBYVKG28X');
-            `,
-          }}
         />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TWBYVKG28X');
+          `}
+        </Script>
         <title>Yuto Motohashi | 本橋悠人</title>
       </head>
       <body>
