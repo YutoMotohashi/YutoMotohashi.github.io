@@ -1,16 +1,16 @@
 import React from 'react';
 import Image from "next/image";
-import gitHubLogo from "./data/LOGO_GitHub.png";
-import linkedInLogo from "./data/LOGO_LI-In.png";
-import xLogo from "./data/LOGO_x.png";
-import portrait from "./data/portrait.jpg";
+import gitHubLogo from "../../data/LOGO_GitHub.png";
+import linkedInLogo from "../../data/LOGO_LI-In.png";
+import xLogo from "../../data/LOGO_x.png";
+import portrait from "../../data/portrait.jpg";
 
-import profile from "./profile.module.css";
+import styles from "./profile.module.css";
 
 function Profile({ language }) {
     return (<>
-        <section id="profile" className={profile.profileContainer}>
-            <div id="profileInfo" className={profile.profileInfo}>
+        <section id="profile" className={styles.profileContainer}>
+            <div id="profileInfo" className={styles.profileInfo}>
                 {language === 'en' ? (
                     <>
                         <h2>Yuto Motohashi</h2>
@@ -31,13 +31,13 @@ function Profile({ language }) {
                 )}
                 <h3>{language === 'en' ? 'Contact' : '連絡先'}</h3>
                 <p>ymotohashi__at__ethz.ch</p>
-                <div id="sociallinkbox" className={profile.socialLinksContainer}>
-                    <div id="sociallinks" className={profile.socialLinks}>
+                <div id="sociallinkbox" className={styles.socialLinksContainer}>
+                    <div id="sociallinks" className={styles.socialLinks}>
                     <SocialLink />
                     </div>  
                 </div>
             </div>
-            <div className={profile.profilePhoto}>
+            <div className={styles.profilePhoto}>
                 <Image src={portrait} alt="Yuto Motohashi" />
             </div>
         </section>
@@ -48,17 +48,16 @@ function SocialLink() {
     return (
         <>
             <a href="https://github.com/YutoMotohashi" target="_blank" rel="noopener noreferrer">
-                <Image className={profile.logoImage} src={gitHubLogo} alt="GitHub: Yuto Motohashi" />
+                <Image className={styles.logoImage} src={gitHubLogo} alt="GitHub: Yuto Motohashi" />
             </a>
             <a href="https://www.linkedin.com/in/yuto-motohashi/" target="_blank" rel="noopener noreferrer">
-                <Image className={profile.logoImage} src={linkedInLogo} alt="LinkedIn: Yuto Motohashi" />
+                <Image className={styles.logoImage} src={linkedInLogo} alt="LinkedIn: Yuto Motohashi" />
             </a>
             <a href="https://x.com/Yuto_Motohashi" target="_blank" rel="noopener noreferrer">
-                <Image className={profile.logoImage} src={xLogo} alt="X: Yuto Motohashi" />
+                <Image className={styles.logoImage} src={xLogo} alt="X: Yuto Motohashi" />
             </a>
         </>
     )
 }
-
 
 export default Profile;

@@ -119,3 +119,20 @@ pre {
   word-wrap: break-word;       /* Ensures the words break to prevent overflow */
   overflow-wrap: break-word;   /* Alternative to word-wrap for newer browsers */
 }
+
+/* Styles for about section */
+#about p {
+  color: #555;
+  line-height: 1.7;
+}
+
+#about a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#about a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

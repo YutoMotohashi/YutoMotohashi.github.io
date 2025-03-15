@@ -1,6 +1,7 @@
-import styles from "./experience.module.css"
+import React from 'react';
+import styles from "./experience.module.css";
 
-function ExperienceContainer({ language, experienceItems}) {
+function ExperienceContainer({ language, experienceItems }) {
     return (
         <div className={styles.experienceContainer}>
             <ul id="experience-list">

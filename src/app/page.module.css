@@ -39,6 +39,24 @@
   margin-right: 20px;
 }
 
+.header li a {
+  padding: 10px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.header li a:hover {
+  color: #007bff;
+}
+
+/* Add styles for active links */
+.header li a.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+}
+
 .header li button,
 .languageSwitch button  {
   background: none;

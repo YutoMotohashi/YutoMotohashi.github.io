@@ -1,5 +1,6 @@
-import newsItems from './data/news_db';
-import styles from "./news_update.module.css"
+import React from 'react';
+import newsItems from '../../data/news_db';
+import styles from "./news_update.module.css";
 
 function NewsUpdates({ language }) {
     // Convert the news items based on the language prop
@@ -9,7 +10,6 @@ function NewsUpdates({ language }) {
         title: language === 'en' ? item.title_en : item.title_ja,
         description: language === 'en' ? item.description_en : item.description_ja,
     }));
-
 
     return (
         <div className={styles.newsContainer}>

@@ -24,5 +24,4 @@ function CV({ language }) {
     )
 };
 
-
 export default CV;

@@ -1,38 +1,13 @@
 import React from 'react';
-import publicationsData from './data/publication';
+import publicationsData from '../../data/publication';
 import styles from './publication.module.css';
 
-// function Publications({ language }) {
-//     return (
-//         <section id="publications">
-//             <h2>Publications</h2>
-//             <div className={styles.publicationContainer}>
-//                 <ul>
-//                     {publicationsData.map((publication, index) => (
-//                         <li key={index} className={styles.publicationEntry}>
-//                             <p className={styles.publicationAuthor}>{publication.author}</p>
-//                             <p className={styles.publicationTitle}>{publication.title}</p>
-//                             <div className={styles.publicationLinks}>
-//                                 {publication.urls.map((link, linkIndex) => (
-//                                     Object.entries(link).map(([key, url]) => (
-//                                         <a key={linkIndex} href={url} target="_blank" rel="noopener noreferrer">
-//                                             View Paper in {key.toUpperCase()}
-//                                         </a>
-//                                     ))
-//                                 ))}
-//                             </div>
-//                         </li>
-//                     ))}
-//                 </ul>
-//             </div>
-//         </section>
-//     );
-// }
-
-function Publications() {
+function Publications({ language = 'en' }) {
+  console.log('Publication component language:', language);
+  
   return (
     <section id="publications">
-      <h2>Publications</h2>
+      <h2>{language === 'ja' ? '発表論文' : 'Publications'}</h2>
       <div className={styles.publicationContainer}>
         <ul>
           {publicationsData.map((publication, index) => {
@@ -47,19 +22,17 @@ function Publications() {
                 </React.Fragment>
               );
             });
-
             return (
               <li key={publication.id ?? index} className={styles.publicationEntry}>
                 {/* Title */}
                 <p className={styles.publicationTitle}>
-                {authorList}, “{publication.title}”{`, `} 
+                {authorList}, "{publication.title}"{`, `} 
                 {/* Journal, volume, issue, date */}
                   <em>{publication.journal}</em>
                   {publication.volume && `, ${publication.volume}`}
                   {publication.issue && `, ${publication.issue}`}
                   {publication.date && ` (${publication.date})`}
                 </p>
-
                 {/* Links */}
                 <div className={styles.publicationLinks}>
                   {publication.urls.map((linkObj, linkIndex) =>
@@ -70,7 +43,6 @@ function Publications() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {/* {key.toUpperCase()} */}
                         <em>{key}</em>
                       </a>
                     ))
@@ -84,5 +56,4 @@ function Publications() {
     </section>
   );
 }
-
 export default Publications;
