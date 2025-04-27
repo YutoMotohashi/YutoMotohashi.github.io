@@ -7,7 +7,7 @@ function CV({ language }) {
         <>
             {language === 'en' ? (
                 <div className="download-link">
-                    <a href={cv_pdf} download="CV_Yuto_Motohashi.pdf">Download my CV from google drive from here (last update: 2024 Oct)</a>
+                    <a href={cv_pdf} download="CV_Yuto_Motohashi.pdf">Download my CV from google drive from here (last update: 2025 Apr)</a>
                 </div>
             ) : (
                 <div className="download-link">
