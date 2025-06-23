@@ -13,7 +13,7 @@ import {
   createFocusedBeam,
 } from "./threeHelpers"; // <-- adjust path if needed
 
-const ThreeComponent = () => {
+const MultiZoneRamsey = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -128,11 +128,13 @@ const ThreeComponent = () => {
     pointLight.position.set(0, 10, 10);
     scene.add(pointLight);
 
-    // Animation logic
+    // Global declarations
     let stage = 1;
-    let timeStart = 0;
+    let timeStart1 = 0;
+    let timeStart2 = 0;
+    let timeStart3 = 0;
+    const waitTime = 0.5; // seconds
     let ionSpeed = 1;
-    const waitTime = 0.5;
 
     function animate() {
       requestAnimationFrame(animate);
@@ -141,22 +143,39 @@ const ThreeComponent = () => {
       const ionZ = ion1.position.z;
 
       if (stage === 1) {
-        if (ionZ >= 4.5) {
+        // Wait in place for waitTime seconds
+        if (Date.now() - timeStart1 >= 1.5 * waitTime * 1000) {
           stage = 2;
-          ionSpeed = 0;
-          timeStart = Date.now();
-          beamAxial.setTransparency(0);
-        } else if (ionZ >= 2 && ionZ <= 2.2) {
-          ionSpeed = 1;
-          beamAxial.setTransparency(0.3);
+          ionSpeed = +1.5;
+          beam_z1_3.setTransparency(0);
+          beam_z1_4.setTransparency(0);
+        } else if (Date.now() - timeStart1 < 0.6 * waitTime * 1000) {
+          ionSpeed = +0;
+          beam_z1_3.setTransparency(0.0);
+          beam_z1_4.setTransparency(0.0);
         } else {
-          ionSpeed = 1;
-          beamAxial.setTransparency(0);
+          ionSpeed = +0;
+          beam_z1_3.setTransparency(0.3);
+          beam_z1_4.setTransparency(0.3);
         }
       } else if (stage === 2) {
-        if (Date.now() - timeStart >= waitTime * 1000) {
+        // Move forward until z >= 4.5
+        if (ionZ >= 4.5) {
           stage = 3;
-          ionSpeed = -1;
+          ionSpeed = 0;
+          timeStart2 = Date.now();
+
+          beamAxial.setTransparency(0);
+        } else {
+          ionSpeed = +1.5;
+
+          beamAxial.setTransparency(0);
+        }
+      } else if (stage === 3) {
+        // Wait in place for waitTime seconds
+        if (Date.now() - timeStart2 >= waitTime * 1000) {
+          stage = 4;
+          ionSpeed = -1.5;
           beam_z2_3.setTransparency(0);
           beam_z2_4.setTransparency(0);
         } else {
@@ -164,27 +183,35 @@ const ThreeComponent = () => {
           beam_z2_3.setTransparency(0.3);
           beam_z2_4.setTransparency(0.3);
         }
-      } else if (stage === 3) {
-        if (ionZ <= -4.5) {
-          stage = 4;
-          ionSpeed = 0;
-          timeStart = Date.now();
-        } else {
-          ionSpeed = -1;
-        }
       } else if (stage === 4) {
-        if (Date.now() - timeStart >= waitTime * 1000) {
-          stage = 1;
-          ionSpeed = 1;
-          beam_z1_1.setTransparency(0);
-          beam_z1_3.setTransparency(0);
-          beamCool.setTransparency(0);
-        } else {
+        // Move backward until z <= -4.5
+        if (ionZ <= -4.5) {
+          stage = 5;
           ionSpeed = 0;
-          beam_z1_1.setTransparency(0.3);
-          beam_z1_3.setTransparency(0.3);
+          timeStart3 = Date.now();
+        } else {
+          ionSpeed = -1.5;
+        }
+      } else if (stage === 5) {
+        // Wait in place for waitTime seconds
+        if (Date.now() - timeStart3 >= waitTime * 1000) {
+          stage = 1;
+          ionSpeed = +0;
+          beam_z1_1.setTransparency(0);
+          beam_z1_2.setTransparency(0);
+          beamCool.setTransparency(0);
+          timeStart1 = Date.now();
+        } else {
+          stage = 5;
+          ionSpeed = +0;
+          beam_z1_1.setTransparency(0.2);
+          beam_z1_2.setTransparency(0.2);
           beamCool.setTransparency(0.2);
         }
+      } else {
+        // Default fallback
+        stage = 1;
+        ionSpeed = 1;
       }
 
       ion1.position.z += 0.1 * ionSpeed;
@@ -217,4 +244,4 @@ const ThreeComponent = () => {
   );
 };
 
-export default ThreeComponent;
+export default MultiZoneRamsey;
