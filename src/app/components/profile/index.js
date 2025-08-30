@@ -58,6 +58,9 @@ function SocialLink() {
             <a href="https://x.com/Yuto_Motohashi" target="_blank" rel="noopener noreferrer">
                 <Image className={styles.logoImage} src={xLogo} alt="X: Yuto Motohashi" />
             </a>
+            <a href="https://orcid.org/0009-0008-9148-5088" target="_blank" rel="noopener noreferrer">
+                <Image className={styles.logoImage} src={xLogo} alt="ORCID: Yuto Motohashi" />
+            </a>
         </>
     )
 }
