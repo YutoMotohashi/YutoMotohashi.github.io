@@ -70,7 +70,7 @@ function LanguageStateProvider({ children }) {
 
   // Always render children; consumers can handle client-only UI to avoid hydration issues
     if (!isClient) {
-    return <div style={{ visibility: 'hidden' }}>Loading...</div>;
+    return <div style={{ visibility: 'hidden' }}>Loading... for static summary you can go to <a href="/static_summary.html">/static_summary.html</a></div>;
   }
 
   return (
