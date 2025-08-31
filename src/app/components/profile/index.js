@@ -3,7 +3,7 @@ import Image from "next/image";
 import gitHubLogo from "../../data/LOGO_GitHub.png";
 import linkedInLogo from "../../data/LOGO_LI-In.png";
 import xLogo from "../../data/LOGO_x.png";
-import orcidLogo from "../../data/ORCID-iD_icon_24x24.png";
+import orcidLogo from "../../data/ORCID-iD_icon_32x32.png";
 import portrait from "../../data/portrait.jpg";
 
 import styles from "./profile.module.css";
@@ -50,6 +50,9 @@ function Profile({ language }) {
 function SocialLink() {
     return (
         <>
+            <a href="https://orcid.org/0009-0008-9148-5088" target="_blank" rel="noopener noreferrer">
+                <Image className={styles.logoImage} src={orcidLogo} alt="ORCID: Yuto Motohashi" />
+            </a>
             <a href="https://github.com/YutoMotohashi" target="_blank" rel="noopener noreferrer">
                 <Image className={styles.logoImage} src={gitHubLogo} alt="GitHub: Yuto Motohashi" />
             </a>
@@ -58,9 +61,6 @@ function SocialLink() {
             </a>
             <a href="https://x.com/Yuto_Motohashi" target="_blank" rel="noopener noreferrer">
                 <Image className={styles.logoImage} src={xLogo} alt="X: Yuto Motohashi" />
-            </a>
-            <a href="https://orcid.org/0009-0008-9148-5088" target="_blank" rel="noopener noreferrer">
-                <Image className={styles.logoImage} src={orcidLogo} alt="ORCID: Yuto Motohashi" />
             </a>
         </>
     )
