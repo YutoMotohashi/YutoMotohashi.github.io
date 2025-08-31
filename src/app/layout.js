@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta content="fCEFYasOakKKA_2EZiHN0QmJTZq1Nju5N3XWzCYKrfw" />
+        <meta name="google-site-verification" content="fCEFYasOakKKA_2EZiHN0QmJTZq1Nju5N3XWzCYKrfw" />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-TWBYVKG28X"
