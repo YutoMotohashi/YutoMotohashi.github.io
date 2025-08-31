@@ -84,15 +84,8 @@ function MainContent({ children }) {
           <p style={{ margin: '0 0 0.5rem 0' }}>
             Static summary is shown for non-JavaScript clients or crawlers. For the full interactive site, enable JavaScript.
           </p>
-          <div style={{ border: '1px solid #ddd', borderRadius: 8, overflow: 'hidden' }}>
-            <iframe
-              src="/static_summary.html"
-              title="Static summary"
-              style={{ width: '100%', height: '70vh', border: 0 }}
-            />
-          </div>
           <p style={{ marginTop: '0.5rem' }}>
-            Direct link: <a href="/static_summary.html">/static_summary.html</a>
+            Direct link to static summary: <a href="/static_summary.html">/static_summary.html</a>
           </p>
           <noscript>
             <p>JavaScript is disabled. You are viewing the static summary.</p>

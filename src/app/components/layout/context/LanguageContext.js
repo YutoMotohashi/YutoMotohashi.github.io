@@ -70,15 +70,7 @@ function LanguageStateProvider({ children }) {
 
   // Always render children; consumers can handle client-only UI to avoid hydration issues
     if (!isClient) {
-    return (
-      <div style={{ width: '100%', height: '100vh' }}>
-        <iframe
-          src="/static_summary.html"
-          title="Static Summary"
-          style={{ width: '100%', height: '100%', border: 'none' }}
-        />
-      </div>
-    );
+    return <div style={{ visibility: 'hidden' }}>Loading...</div>;
   }
 
   return (
