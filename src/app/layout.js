@@ -76,7 +76,15 @@ function MainContent({ children }) {
   }, []);
 
   if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}>Loading content...</div>;
+    return (
+      <div style={{ width: '100%', height: '100vh' }}>
+        <iframe
+          src="/loading.html"
+          title="Loading"
+          style={{ width: '100%', height: '100%', border: 'none' }}
+        />
+      </div>
+    );
   }
 
   return (
