@@ -70,7 +70,15 @@ function LanguageStateProvider({ children }) {
 
   // Only render children when we're on the client to prevent hydration mismatch
   if (!isClient) {
-    return <div style={{ visibility: 'hidden' }}>Loading...</div>;
+    return (
+      <div style={{ width: '100%', height: '100vh' }}>
+        <iframe
+          src="/loading.html"
+          title="Loading"
+          style={{ width: '100%', height: '100%', border: 'none' }}
+        />
+      </div>
+    );
   }
 
   return (
