@@ -8,8 +8,10 @@ export const scientificExperienceItems = [
         title_en: `Research Assistant`,
         title_ja: `リサーチアシスタント`,
         description_en: ``,
-       description_ja: ``,
-        link: `https://tiqi.ethz.ch/`
+        description_ja: ``,
+        link: `https://tiqi.ethz.ch/`,
+        link_description_en: `Trapped Ion Quantum Information Group Website`,
+        link_description_ja: `イオントラップ量子情報グループのウェブサイト`
     },
     {
         index: 3,
@@ -23,7 +25,9 @@ export const scientificExperienceItems = [
 Efficient detection of Ionized Positronium using MCP through Electromagnetic Field Simulations and Modifications`,
         description_ja: `指導教員：吉岡孝高
 電磁場シミュレーションと電極設計による、イオン化ポジトロニウムの効率的な検出方法の開発`,
-        link: `http://www.fs.t.u-tokyo.ac.jp/index.html`
+        link: `http://www.fs.t.u-tokyo.ac.jp/index.html`,
+        link_description_en: `The University of Tokyo, Faculty of Engineering, School of Applied Physics, Yoshioka Group Website`,
+        link_description_ja: `東京大学 工学部 物理工学科 吉岡研究室のウェブサイト`
     },
     {
         index: 2,
@@ -39,7 +43,9 @@ Photonics and Quantum Electronics Group`,
 Designed and simulated photonic crystal UV resonators in a novel platform via full 3D FDTD simulations`,
         description_ja: `指導教員：Karan Mehta
 紫外線領域での、フォトニック結晶光共振器の設計と3D-FDTDシミュレーション`,
-        link: `https://sites.coecis.cornell.edu/mehta/`
+        link: `https://sites.coecis.cornell.edu/mehta/`,
+        link_description_en: `Cornell University, Photonics and Quantum Electronics Group Website`,
+        link_description_ja: `コーネル大学 フォトニクス・量子エレクトロニクスグループのウェブサイト`
     },
     {
         index: 1,
@@ -53,7 +59,9 @@ Designed and simulated photonic crystal UV resonators in a novel platform via fu
 Transportation of Trapped-ion qubit in an integrated photonics QCCD device through optimization of electric fields and study of stray electric fields`,
         description_ja: `指導教員：Jonathan Home
 電場の最適化と迷電場の研究を通じた、集積光学系を組み込んだQCCDデバイス内でのイオンの輸送`,
-        link: `https://tiqi.ethz.ch/`
+        link: `https://tiqi.ethz.ch/`,
+        link_description_en: `Trapped Ion Quantum Information Group Website`,
+        link_description_ja: `イオントラップ量子情報グループのウェブサイト`
     },
 ];
 
@@ -68,7 +76,9 @@ export const educationExperienceItems = [
         title_ja: `修士課程（量子工学）`,
         description_en: ``,
         description_ja: ``,
-        link: `https://master-qe.ethz.ch/`
+        link: `https://master-qe.ethz.ch/`,
+        link_description_en: `ETH Zurich, Master in Quantum Engineering Website`,
+        link_description_ja: `ETHチューリッヒ 量子工学修士課程のウェブサイト`
     },
     {
         index: 2,
@@ -80,7 +90,9 @@ export const educationExperienceItems = [
         title_ja: `学士（工学）`,
         description_en: ``,
         description_ja: ``,
-        link: `https://www.ap.t.u-tokyo.ac.jp/`
+        link: `https://www.ap.t.u-tokyo.ac.jp/`,
+        link_description_en: `The University of Tokyo, Faculty of Engineering, School of Applied Physics Website`,
+        link_description_ja: `東京大学 工学部 物理工学科のウェブサイト`
     },
     {
         index: 3,
@@ -92,7 +104,9 @@ export const educationExperienceItems = [
         title_ja: `交換留学`,
         description_en: ``,
         description_ja: ``,
-        link: ``
+        link: ``,
+        link_description_en: ``,
+        link_description_ja: ``
     },
 ];
 export const industrialExperienceItems = [
@@ -106,6 +120,8 @@ export const industrialExperienceItems = [
         title_ja: `インターンシップ`,
         description_en: `Development of embedded software for electric vehicle charging and discharging machines`,
         description_ja: `電気自動車の充放電機の組込みソフトウェアの開発`,
-        link: `https://yanekara.jp/`
+        link: `https://yanekara.jp/`,
+        link_description_en: `Yanekara Inc. Website`,
+        link_description_ja: `株式会社Yanekaraのウェブサイト`
     }
 ];
