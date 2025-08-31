@@ -73,8 +73,8 @@ function LanguageStateProvider({ children }) {
     return (
       <div style={{ width: '100%', height: '100vh' }}>
         <iframe
-          src="/loading.html"
-          title="Loading"
+          src="/static_summary.html"
+          title="Static Summary"
           style={{ width: '100%', height: '100%', border: 'none' }}
         />
       </div>
