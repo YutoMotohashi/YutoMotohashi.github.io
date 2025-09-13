@@ -30,7 +30,3 @@ Other Courses:
 
 Projects:
 - 227-1871-00L | Semester Project
-
-## コメント
-
-残りはScience in Perspectiveの授業があります。インターンは以前にYanekara Inc.で行ったので、単位として認められる見込みです。2026年の1月からStanford UniversityでMaster Thesisプロジェクトを行い、修士課程を修了する見込みです。
