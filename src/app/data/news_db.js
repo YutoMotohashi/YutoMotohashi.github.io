@@ -2,6 +2,14 @@
 
 const newsItems = [
   {
+    date: "2025-09-29",
+    link: "https://nqp.stanford.edu/",
+    title_en: "Master's thesis project at Stanford University",
+    description_en: "Will begin my Master's thesis research in the Quantum Photonics Lab at Stanford in January 2026.",
+    title_ja: "スタンフォード大学で修士論文研究",
+    description_ja: "2026年1月よりスタンフォード大学Quantum Photonics Labで修士論文研究を開始します。"
+  },
+  {
     date: "2024-12-20",
     link: "https://journals.aps.org/prx/accepted/65079K16Ca118a0138c947909358cd4d261ac522f",
     title_en: "Accepted paper in Physical Review X",
@@ -60,4 +68,4 @@ const newsItems = [
   ];
   
 export default newsItems;
-  
+
