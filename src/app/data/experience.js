@@ -1,8 +1,22 @@
 export const scientificExperienceItems = [
     {
+        index: 5,
+        start_date: `2026-01`,
+        end_date: `Present`,
+        institution_en: `Stanford University, E.L. Ginzton Laboratory, Nanoscale and Quantum Photonics Lab`,
+        institution_ja: `スタンフォード大学 E.L. Ginzton Laboratory, Nanoscale and Quantum Photonics Lab`,
+        title_en: `Master thesis project`,
+        title_ja: `修士論文プロジェクト`,
+        description_en: ``,
+        description_ja: ``,
+        link: `https://nqp.stanford.edu/`,
+        link_description_en: `Nanoscale and Quantum Photonics Lab Website`,
+        link_description_ja: `Nanoscale and Quantum Photonics Labのウェブサイト`
+    },
+    {
         index: 4,
         start_date: `2024-06`,
-        end_date: `Present`,
+        end_date: `2025-12`,
         institution_en: `ETH Zurich, Department of Physics, Trapped Ion Quantum Information Group`,
         institution_ja: `スイス連邦工科大学チューリッヒ校 Department of Physics, Trapped Ion Quantum Information Group`,
         title_en: `Research Assistant`,
