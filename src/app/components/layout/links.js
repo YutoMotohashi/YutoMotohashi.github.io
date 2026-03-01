@@ -70,6 +70,17 @@ function Links({ language }) {
                     <p>XPLANEに寄稿した海外大学院受験記はこちら</p>
                 </a>
                 <a
+                    href="https://gakuiryugaku.net/"
+                    className={styles.card}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <h2>
+                        海外大学院学生会　<span>-&gt;</span>
+                    </h2>
+                    <p>海外大学院学生会の公式サイトはこちら。留学説明会・留学に便利な情報が掲載されています</p>
+                </a>
+                <a
                     href="https://www.utokyo-ipc.co.jp/ja/story/internship-yanekara-motohashi/"
                     className={styles.card}
                     target="_blank"
