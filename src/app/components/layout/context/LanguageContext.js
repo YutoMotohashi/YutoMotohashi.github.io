@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const LanguageContext = createContext({
   language: 'en',
@@ -25,21 +25,12 @@ function useLanguageFromURL() {
 }
 
 function LanguageStateProvider({ children }) {
-  const [isClient, setIsClient] = useState(false);
   const [language, setLanguage] = useState('en');
-  const pathname = usePathname();
   const router = useRouter();
   const urlLanguage = useLanguageFromURL();
 
-  // Mark when component is mounted on client
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   // Handle initial language setup
   useEffect(() => {
-    if (!isClient) return;
-
     // Priority: URL > localStorage > default
     if (urlLanguage) {
       setLanguage(urlLanguage);
@@ -50,10 +41,9 @@ function LanguageStateProvider({ children }) {
         setLanguage(savedLanguage);
       }
     }
-  }, [isClient, urlLanguage]);
+  }, [urlLanguage]);
 
   const handleLanguageChange = (newLanguage) => {
-    if (!isClient) return;
     setLanguage(newLanguage);
     localStorage.setItem('language', newLanguage);
     
@@ -67,11 +57,6 @@ function LanguageStateProvider({ children }) {
     params.set('language', language);
     return `${path}?${params.toString()}`;
   };
-
-  // Always render children; consumers can handle client-only UI to avoid hydration issues
-    if (!isClient) {
-    return <div style={{ visibility: 'hidden' }}>Loading... for static summary you can go to <a href="/static_summary.html">/static_summary.html</a></div>;
-  }
 
   return (
     <LanguageContext.Provider 

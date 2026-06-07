@@ -1,13 +1,13 @@
 const galleryContents = [
     {
-      title: "Trapped Ion Quantum Computer Operation",
+      title: "Trapped Ion Transport Measurement",
       type: "threejs",
       component: "TransportMeasurement",
       description: "This is how a trapped ion quantum computer works.",
       slug: "trapped-ion-quantum-computer-operation-transport-measurement",
     },
     {
-      title: "Trapped Ion Quantum Computer Operation",
+      title: "Multi-Zone Ramsey Operation",
       type: "threejs",
       component: "MultiZoneRamsey",
       description: "This is how a trapped ion quantum computer works.",

@@ -1,7 +1,6 @@
 'use client';
 
 import "./globals.css"
-import React, { useState, useEffect } from 'react';
 import Script from 'next/script';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,15 +11,6 @@ import { LanguageProvider, useLanguage } from './components/layout/context/Langu
 function NavigationContent() {
   const pathname = usePathname();
   const { language, setLanguage, createUrl } = useLanguage();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}>Loading navigation...</div>;
-  }
 
   return (
     <div className={styles.header}>
@@ -69,34 +59,6 @@ function NavigationContent() {
 }
 
 function MainContent({ children }) {
-  const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    // On the top page, show a static summary fallback for non-JS/crawlers
-    if (pathname === '/') {
-      return (
-        <div id="static-summary-fallback" style={{ padding: '1rem' }}>
-          <p style={{ margin: '0 0 0.5rem 0' }}>
-            Static summary is shown for non-JavaScript clients or crawlers. For the full interactive site, enable JavaScript.
-          </p>
-          <p style={{ marginTop: '0.5rem' }}>
-            Direct link to static summary: <a href="/static_summary.html">/static_summary.html</a>
-          </p>
-          <noscript>
-            <p>JavaScript is disabled. You are viewing the static summary.</p>
-          </noscript>
-        </div>
-      );
-    }
-    // Other routes can remain visually hidden to avoid layout shift
-    return <div style={{ visibility: 'hidden' }}>Loading content...</div>;
-  }
-
   return (
     <>
       <NavigationContent />

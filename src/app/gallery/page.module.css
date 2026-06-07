@@ -26,12 +26,22 @@
   border: 1px solid rgba(var(--card-border-rgb), 0.05);
   border-radius: var(--border-radius);
   transition: background 200ms, border 200ms;
-  max-height: 360px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
   padding: 1rem;
+}
+
+.galleryLink {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.galleryLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
 }
 
 /* Hover styling consistent with main page.module.css cards */
@@ -62,16 +72,18 @@
 /* Clickable media container */
 .galleryMedia {
   cursor: pointer;
-  outline: none;
+  height: 300px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  border-radius: var(--border-radius);
 }
 
 /* Media styling */
 .galleryImage,
 .galleryVideo {
   width: 100%;
-  max-height: 160px;
+  height: 100%;
   object-fit: cover;
   border-radius: var(--border-radius);
-  margin-bottom: 0.75rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }

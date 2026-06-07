@@ -136,8 +136,10 @@ const MultiZoneRamsey = () => {
     const waitTime = 0.5; // seconds
     let ionSpeed = 1;
 
+    let animationFrameId;
+
     function animate() {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
       renderer.render(scene, camera);
 
       const ionZ = ion1.position.z;
@@ -232,6 +234,10 @@ const MultiZoneRamsey = () => {
     // Cleanup on unmount
     return () => {
       window.removeEventListener("resize", onResize);
+      cancelAnimationFrame(animationFrameId);
+      if (renderer.domElement.parentElement === container) {
+        container.removeChild(renderer.domElement);
+      }
       renderer.dispose();
     };
   }, []);

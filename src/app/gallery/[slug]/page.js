@@ -10,8 +10,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function GalleryItemPage({ params }) {
-  const { slug } = params;
+export default async function GalleryItemPage({ params }) {
+  const { slug } = await params;
 
   // Find the corresponding gallery item by slug
   const item = galleryContents.find((content) => content.slug === slug);
