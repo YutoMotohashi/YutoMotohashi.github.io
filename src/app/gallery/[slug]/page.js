@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import galleryContents from "../galleryContents";
+import GalleryMedia from "./GalleryMedia";
 
 // Function to generate static params for all gallery items
 export async function generateStaticParams() {
@@ -23,18 +24,7 @@ export default function GalleryItemPage({ params }) {
     <div className={styles.galleryContainer}>
       <h1 className={styles.galleryTitle}>{item.title}</h1>
       <p className={styles.galleryDescription}>{item.description}</p>
-      <div className={styles.galleryMedia}>
-        {item.type === "threejs" && item.component && <item.component />}
-        {item.type === "image" && (
-          <img src={item.src} alt={item.title} className={styles.galleryImage} />
-        )}
-        {item.type === "video" && (
-          <video controls className={styles.galleryVideo}>
-            <source src={item.src} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
-      </div>
+      <GalleryMedia item={item} />
     </div>
   );
 }
