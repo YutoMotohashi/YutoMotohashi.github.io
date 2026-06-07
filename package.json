@@ -9,7 +9,7 @@
     "lint": "next lint",
     "help": "next --help",
     "webpackbuiild": "webpack --",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap && node scripts/finalize-sitemap.mjs"
   },
   "dependencies": {
     "next": "^14.2.32",
