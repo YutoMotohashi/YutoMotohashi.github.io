@@ -3,6 +3,9 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import fs from 'fs';
 import path from 'path';
+import { createPageMetadata } from '../metadata';
+
+export const metadata = createPageMetadata('/blog');
 
 export default function Blog() {
   const blogDirectory = path.join(process.cwd(), 'src/blog');

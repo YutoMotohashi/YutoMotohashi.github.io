@@ -1,18 +1,8 @@
-'use client';
+import CVClient from './CVClient';
+import { createPageMetadata } from '../metadata';
 
-import React, { Suspense } from 'react';
-import CV from "../components/cv";
-import { useLanguage } from '../components/layout/context/LanguageContext';
-
-function CVContent() {
-  const { language } = useLanguage();
-  return <CV language={language} />;
-}
+export const metadata = createPageMetadata('/cv');
 
 export default function CVPage() {
-  return (
-    <Suspense fallback={<div>Loading CV...</div>}>
-      <CVContent />
-    </Suspense>
-  );
+  return <CVClient />;
 }

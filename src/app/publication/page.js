@@ -1,18 +1,8 @@
-'use client';
+import PublicationClient from './PublicationClient';
+import { createPageMetadata } from '../metadata';
 
-import React, { Suspense } from 'react';
-import Publications from "../components/publication";
-import { useLanguage } from '../components/layout/context/LanguageContext';
-
-function PublicationContent() {
-  const { language } = useLanguage();
-  return <Publications language={language} />;
-}
+export const metadata = createPageMetadata('/publication');
 
 export default function PublicationPage() {
-  return (
-    <Suspense fallback={<div>Loading publications...</div>}>
-      <PublicationContent />
-    </Suspense>
-  );
+  return <PublicationClient />;
 }

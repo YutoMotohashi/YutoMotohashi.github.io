@@ -1,17 +1,8 @@
-'use client'
-import React, { Suspense } from 'react';
-import Home from "./components/layout/home";
-import { useLanguage } from './components/layout/context/LanguageContext';
+import HomeClient from './HomeClient';
+import { createPageMetadata } from './metadata';
 
-function HomeContent() {
-  const { language } = useLanguage();
-  return <Home language={language} />;
-}
+export const metadata = createPageMetadata('/');
 
 export default function Page() {
-  return (
-    <Suspense fallback={<div>Loading home content...</div>}>
-      <HomeContent />
-    </Suspense>
-  );
+  return <HomeClient />;
 }

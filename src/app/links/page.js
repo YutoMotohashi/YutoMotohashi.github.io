@@ -1,18 +1,8 @@
-'use client';
+import LinksClient from './LinksClient';
+import { createPageMetadata } from '../metadata';
 
-import React, { Suspense } from 'react';
-import Links from "../components/layout/links";
-import { useLanguage } from '../components/layout/context/LanguageContext';
-
-function LinksContent() {
-  const { language } = useLanguage();
-  return <Links language={language} />;
-}
+export const metadata = createPageMetadata('/links');
 
 export default function LinksPage() {
-  return (
-    <Suspense fallback={<div>Loading links...</div>}>
-      <LinksContent />
-    </Suspense>
-  );
+  return <LinksClient />;
 }

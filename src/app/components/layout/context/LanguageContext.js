@@ -44,18 +44,22 @@ function LanguageStateProvider({ children }) {
   }, [urlLanguage]);
 
   const handleLanguageChange = (newLanguage) => {
+    const newUrl = new URL(window.location.href);
+
     setLanguage(newLanguage);
     localStorage.setItem('language', newLanguage);
-    
-    const newUrl = new URL(window.location.href);
-    newUrl.searchParams.set('language', newLanguage);
+
+    if (newLanguage === 'ja') {
+      newUrl.searchParams.set('language', 'ja');
+    } else {
+      newUrl.searchParams.delete('language');
+    }
+
     router.push(newUrl.pathname + newUrl.search);
   };
 
   const createUrl = (path) => {
-    const params = new URLSearchParams();
-    params.set('language', language);
-    return `${path}?${params.toString()}`;
+    return language === 'ja' ? `${path}?language=ja` : path;
   };
 
   return (
