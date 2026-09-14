@@ -1,78 +1,116 @@
 'use client';
 
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useContext, useEffect, useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 
+const DEFAULT_LANGUAGE = 'en';
+const LANGUAGE_STORAGE_KEY = 'language';
+const LANGUAGE_CHANGE_EVENT = 'site-language-change';
+
 const LanguageContext = createContext({
-  language: 'en',
+  language: DEFAULT_LANGUAGE,
   setLanguage: () => {},
-  createUrl: () => {}
+  createUrl: (path) => path,
 });
 
-// Safely get URL parameters on client side
-function useLanguageFromURL() {
-  const [urlLanguage, setUrlLanguage] = useState(null);
-  
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const lang = params.get('language');
-    if (lang && (lang === 'en' || lang === 'ja')) {
-      setUrlLanguage(lang);
-    }
-  }, []);
-  
-  return urlLanguage;
+function isSupportedLanguage(value) {
+  return value === 'en' || value === 'ja';
+}
+
+function getUrlLanguage() {
+  const value = new URLSearchParams(window.location.search).get('language');
+  return isSupportedLanguage(value) ? value : null;
+}
+
+function getStoredLanguage() {
+  try {
+    const value = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    return isSupportedLanguage(value) ? value : null;
+  } catch {
+    return null;
+  }
+}
+
+function storeLanguage(language) {
+  try {
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch {
+    // Language switching still works when storage is unavailable.
+  }
+}
+
+function resolveBrowserLanguage() {
+  return getUrlLanguage() || getStoredLanguage() || DEFAULT_LANGUAGE;
+}
+
+// Keep button changes immediate while the router updates the URL.
+let clientLanguage = null;
+
+function getClientSnapshot() {
+  return clientLanguage ?? resolveBrowserLanguage();
+}
+
+function getServerSnapshot() {
+  return DEFAULT_LANGUAGE;
+}
+
+function subscribe(callback) {
+  const refreshFromBrowser = () => {
+    clientLanguage = resolveBrowserLanguage();
+    callback();
+  };
+
+  window.addEventListener('popstate', refreshFromBrowser);
+  window.addEventListener('storage', refreshFromBrowser);
+  window.addEventListener(LANGUAGE_CHANGE_EVENT, callback);
+
+  return () => {
+    window.removeEventListener('popstate', refreshFromBrowser);
+    window.removeEventListener('storage', refreshFromBrowser);
+    window.removeEventListener(LANGUAGE_CHANGE_EVENT, callback);
+  };
 }
 
 function LanguageStateProvider({ children }) {
-  const [language, setLanguage] = useState('en');
   const router = useRouter();
-  const urlLanguage = useLanguageFromURL();
+  const language = useSyncExternalStore(
+    subscribe,
+    getClientSnapshot,
+    getServerSnapshot,
+  );
 
   useEffect(() => {
     document.documentElement.lang = language;
+
+    // Do not persist the old URL language while a button change is navigating.
+    if (getUrlLanguage() === language) {
+      storeLanguage(language);
+    }
   }, [language]);
 
-  // Handle initial language setup
-  useEffect(() => {
-    // Priority: URL > localStorage > default
-    if (urlLanguage) {
-      setLanguage(urlLanguage);
-      localStorage.setItem('language', urlLanguage);
-    } else {
-      const savedLanguage = localStorage.getItem('language');
-      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ja')) {
-        setLanguage(savedLanguage);
-      }
-    }
-  }, [urlLanguage]);
-
   const handleLanguageChange = (newLanguage) => {
+    if (!isSupportedLanguage(newLanguage)) return;
+
     const newUrl = new URL(window.location.href);
-
-    setLanguage(newLanguage);
-    localStorage.setItem('language', newLanguage);
-
     if (newLanguage === 'ja') {
       newUrl.searchParams.set('language', 'ja');
     } else {
       newUrl.searchParams.delete('language');
     }
 
-    router.push(newUrl.pathname + newUrl.search);
+    storeLanguage(newLanguage);
+    clientLanguage = newLanguage;
+    window.dispatchEvent(new Event(LANGUAGE_CHANGE_EVENT));
+    router.push(`${newUrl.pathname}${newUrl.search}${newUrl.hash}`);
   };
 
-  const createUrl = (path) => {
-    return language === 'ja' ? `${path}?language=ja` : path;
-  };
+  const createUrl = (path) => (
+    language === 'ja' ? `${path}?language=ja` : path
+  );
 
   return (
-    <LanguageContext.Provider 
-      value={{ 
-        language, 
-        setLanguage: handleLanguageChange, 
-        createUrl 
-      }}
+    <LanguageContext.Provider
+      value={{ language, setLanguage: handleLanguageChange, createUrl }}
     >
       {children}
     </LanguageContext.Provider>
@@ -80,11 +118,7 @@ function LanguageStateProvider({ children }) {
 }
 
 export function LanguageProvider({ children }) {
-  return (
-    <LanguageStateProvider>
-      {children}
-    </LanguageStateProvider>
-  );
+  return <LanguageStateProvider>{children}</LanguageStateProvider>;
 }
 
 export function useLanguage() {
