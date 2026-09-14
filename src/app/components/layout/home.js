@@ -1,44 +1,33 @@
-import React from 'react';
-import ExperienceContainer from "../experience";
-import NewsUpdates from "../news";
-import Profile from "../profile";
-import styles from "../../page.module.css";
+import ExperienceContainer from '../experience';
+import NewsUpdates from '../news';
+import Profile from '../profile';
+import styles from './home.module.css';
+import {
+  educationExperienceItems,
+  scientificExperienceItems,
+  industrialExperienceItems,
+} from '../../data/experience';
 
-import { educationExperienceItems, scientificExperienceItems, industrialExperienceItems } from '../../data/experience';
-
-function Home({ language }) {
-    return (
-        <>
-            <section id="profiles">
-                <h2>{language === 'en' ? 'Profile' : 'プロフィール'}</h2>
-                <Profile language={language} />
-            </section>
-            <section id="news-feed">
-                <h2>{language === 'en' ? 'Latest Updates' : '最新情報'}</h2>
-                <div className="news-container">
-                    <NewsUpdates language={language} />
-                </div>
-            </section>
-            <section id="education-experience-feed">
-                <h2>{language === 'en' ? 'Education' : '経歴'}</h2>
-                <div className="experience-container">
-                    <ExperienceContainer language={language} experienceItems={educationExperienceItems} />
-                </div>
-            </section>
-            <section id="scientific-experience-feed">
-                <h2>{language === 'en' ? 'Scientific Experience' : '研究経験'}</h2>
-                <div className="experience-container">
-                    <ExperienceContainer language={language} experienceItems={scientificExperienceItems} />
-                </div>
-            </section>
-            <section id="industrial-experience-feed">
-                <h2>{language === 'en' ? 'Industrial Experience' : '実務経験'}</h2>
-                <div className="experience-container">
-                    <ExperienceContainer language={language} experienceItems={industrialExperienceItems} />
-                </div>
-            </section>
-        </>
-    );
-};
-
-export default Home;
+export default function Home({ language }) {
+  return (
+    <div className={styles.home}>
+      <Profile language={language} />
+      <section id="news-feed" className={styles.section} aria-labelledby="news-heading">
+        <h2 id="news-heading">{language === 'en' ? 'Latest Updates' : '最新情報'}</h2>
+        <NewsUpdates language={language} />
+      </section>
+      <section id="education-experience-feed" className={styles.section} aria-labelledby="education-heading">
+        <h2 id="education-heading">{language === 'en' ? 'Education' : '学歴'}</h2>
+        <ExperienceContainer language={language} experienceItems={educationExperienceItems} />
+      </section>
+      <section id="scientific-experience-feed" className={styles.section} aria-labelledby="research-heading">
+        <h2 id="research-heading">{language === 'en' ? 'Research Experience' : '研究経験'}</h2>
+        <ExperienceContainer language={language} experienceItems={scientificExperienceItems} />
+      </section>
+      <section id="industrial-experience-feed" className={styles.section} aria-labelledby="industry-heading">
+        <h2 id="industry-heading">{language === 'en' ? 'Industrial Experience' : '実務経験'}</h2>
+        <ExperienceContainer language={language} experienceItems={industrialExperienceItems} />
+      </section>
+    </div>
+  );
+}

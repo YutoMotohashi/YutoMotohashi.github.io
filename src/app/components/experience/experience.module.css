@@ -1,59 +1,88 @@
-
 .experienceContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    /*margin-top: 20px;/*/
-    margin: 10px auto;
-    padding: 20px;
-    max-width: 1200px;
-    /* Adjust as needed */
-    max-height: 2000px;
-    /* for scrollable area */
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    /*background-color: #f9f9f9; /* Light background for the container */
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
 }
 
-.experienceContainer h2 {
-    margin-top: 0;
-    margin-bottom: 1em;
+.experienceList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.experienceContainer ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    /* wrap text */
-    white-space: normal;
+.experienceItem {
+    display: grid;
+    grid-template-columns: minmax(8.5rem, 11.5rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--site-line, #e5e9ef);
 }
 
-.experienceContainer li {
-    border-bottom: 1px solid #e1e1e1; /* Separator between items */
-    padding: 5px 0; /* Padding above and below each item */
+.experienceItem:last-child {
+    border-bottom: 1px solid var(--site-line, #e5e9ef);
 }
 
-.experienceContainer li:last-child {
-    border-bottom: none; /* No border for the last item */
+.dateRange {
+    color: var(--site-muted, #596575);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.5;
 }
 
-.experienceContainer time {
-    font-weight: bold; /* Bold font for dates */
+.experienceContent {
+    min-width: 0;
 }
 
-.experienceContainer strong {
-    display: block; /* Make title stand out on its own line */
-    margin-top: 5px; /* Spacing for clarity */
+.title {
+    margin: 0;
+    color: var(--site-ink, #17212f);
+    font-size: 1rem;
+    font-weight: 650;
+    line-height: 1.45;
 }
 
-.experienceContainer a {
-    display: inline-block; /* Better control over styling */
-    color: #007bff; /* Contrast with button */
-    padding: 6px 12px; /* Button padding */
-    border-radius: 4px; /* Rounded corners for the button */
-    text-decoration: none; /* No underline */
-    margin-top: 10px; /* Separate from description */
+.institution {
+    margin: 0.25rem 0 0;
+    color: var(--site-ink, #17212f);
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+.description {
+    margin: 0.55rem 0 0;
+    color: var(--site-muted, #596575);
+    line-height: 1.55;
+    white-space: pre-line;
+}
+
+.experienceLink {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: var(--site-accent, #245edb);
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.experienceLink:hover,
+.experienceLink:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+}
+
+.experienceLink:focus-visible {
+    outline: 2px solid var(--site-accent, #245edb);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+    .experienceItem {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        padding: 0.9rem 0;
+    }
+
+    .dateRange {
+        font-size: 0.85rem;
+    }
 }
 

@@ -29,6 +29,10 @@ function LanguageStateProvider({ children }) {
   const router = useRouter();
   const urlLanguage = useLanguageFromURL();
 
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   // Handle initial language setup
   useEffect(() => {
     // Priority: URL > localStorage > default

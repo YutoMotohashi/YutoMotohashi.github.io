@@ -15,7 +15,7 @@
 /* Grid layout similar to .grid in main page.module.css */
 .galleryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1em;
   width: 100%;
 }
@@ -31,11 +31,13 @@
   justify-content: space-between;
   overflow: hidden;
   padding: 1rem;
+  min-width: 0;
 }
 
 .galleryLink {
   color: inherit;
   display: block;
+  min-width: 0;
   text-decoration: none;
 }
 
@@ -55,18 +57,14 @@
 .galleryItem h2 {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 .galleryItem p {
   font-size: 1rem;
   opacity: 0.7;
   margin-bottom: 0.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 /* Clickable media container */
