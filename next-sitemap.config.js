@@ -2,6 +2,7 @@
 const config = {
   siteUrl: 'https://yutomotohashi.github.io',
   generateRobotsTxt: true,
+  trailingSlash: true,
   outDir: './dist',
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],
