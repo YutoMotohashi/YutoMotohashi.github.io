@@ -83,7 +83,7 @@ export const educationExperienceItems = [
     {
         index: 1,
         start_date: `2024-09`,
-        end_date: `2026-09 (Expected)`,
+        end_date: `2027-02 (Expected)`,
         institution_en: `ETH Zurich, Switzerland`,
         institution_ja: `スイス連邦工科大学チューリッヒ校`,
         title_en: `Master of Quantum Engineering`,
@@ -124,6 +124,20 @@ export const educationExperienceItems = [
     },
 ];
 export const industrialExperienceItems = [
+    {
+        index: 2,
+        start_date: `2026-11`,
+        end_date: ``,
+        institution_en: `ZuriQ`,
+        institution_ja: `ZuriQ`,
+        title_en: `Intern (full time)`,
+        title_ja: `フルタイム インターン`,
+        description_en: ``,
+        description_ja: ``,
+        link: `https://zuriq.com/`,
+        link_description_en: `ZuriQ Website`,
+        link_description_ja: `ZuriQのウェブサイト`,
+    },
     {
         index: 1,
         start_date: `2021-07`,
