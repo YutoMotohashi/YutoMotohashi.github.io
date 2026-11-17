@@ -127,7 +127,7 @@ export const industrialExperienceItems = [
     {
         index: 2,
         start_date: `2026-11`,
-        end_date: ``,
+        end_date: `2027-02 (Expected)`,
         institution_en: `ZuriQ`,
         institution_ja: `ZuriQ`,
         title_en: `Intern (full time)`,
